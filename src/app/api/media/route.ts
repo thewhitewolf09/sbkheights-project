@@ -1,17 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
-import fs from "fs";
-import path from "path";
+import { v2 as cloudinary } from "cloudinary";
 
-const UPLOAD_DIR = path.join(process.cwd(), "public", "uploads");
-
-// Ensure upload directory exists
-function ensureUploadDir() {
-  if (!fs.existsSync(UPLOAD_DIR)) {
-    fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-  }
-}
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true,
+});
 
 // GET — list all uploaded files
 export async function GET() {
@@ -20,26 +17,29 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  ensureUploadDir();
+  try {
+    const result = await cloudinary.api.resources({
+      type: 'upload',
+      prefix: 'sbkheights/',
+      max_results: 100,
+    });
 
-  const files = fs.readdirSync(UPLOAD_DIR).map((filename) => {
-    const filePath = path.join(UPLOAD_DIR, filename);
-    const stat = fs.statSync(filePath);
-    const ext = path.extname(filename).toLowerCase();
-    const isVideo = [".mp4", ".webm", ".mov", ".avi", ".mkv"].includes(ext);
-    return {
-      name: filename,
-      url: `/uploads/${filename}`,
-      size: stat.size,
-      type: isVideo ? "video" : "image",
-      uploadedAt: stat.mtime.toISOString(),
-    };
-  });
+    const files = result.resources.map((file: any) => ({
+      name: file.public_id.split('/').pop() + '.' + file.format,
+      url: file.secure_url,
+      size: file.bytes,
+      type: file.resource_type === 'video' ? 'video' : 'image',
+      uploadedAt: file.created_at,
+    }));
 
-  // Sort newest first
-  files.sort((a, b) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime());
+    // Sort newest first manually since api.resources doesn't natively guarantee desc order
+    files.sort((a: any, b: any) => new Date(b.uploadedAt).getTime() - new Date(a.uploadedAt).getTime());
 
-  return NextResponse.json({ files });
+    return NextResponse.json({ files });
+  } catch (error) {
+    console.error("Cloudinary fetch error:", error);
+    return NextResponse.json({ files: [] });
+  }
 }
 
 // POST — upload a file
@@ -49,30 +49,43 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  ensureUploadDir();
+  try {
+    const formData = await req.formData();
+    const uploadedFiles = formData.getAll("files") as File[];
 
-  const formData = await req.formData();
-  const files = formData.getAll("files") as File[];
+    if (!uploadedFiles || uploadedFiles.length === 0) {
+      return NextResponse.json({ error: "No files provided" }, { status: 400 });
+    }
 
-  if (!files || files.length === 0) {
-    return NextResponse.json({ error: "No files provided" }, { status: 400 });
+    const uploadedOutputs: string[] = [];
+
+    for (const file of uploadedFiles) {
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+
+      const uploadPromise = new Promise<string>((resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream(
+          {
+            folder: "sbkheights",
+            resource_type: "auto",
+          },
+          (error, result) => {
+            if (error) reject(error);
+            else resolve(result!.secure_url);
+          }
+        );
+        stream.end(buffer);
+      });
+
+      const url = await uploadPromise;
+      uploadedOutputs.push(url);
+    }
+
+    return NextResponse.json({ uploaded: uploadedOutputs });
+  } catch (err: any) {
+    console.error("Cloudinary upload error:", err);
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
-
-  const uploaded: string[] = [];
-
-  for (const file of files) {
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
-    // Sanitize filename: replace spaces with dashes, keep extension
-    const safeName = `${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
-    const filePath = path.join(UPLOAD_DIR, safeName);
-
-    fs.writeFileSync(filePath, buffer);
-    uploaded.push(`/uploads/${safeName}`);
-  }
-
-  return NextResponse.json({ uploaded });
 }
 
 // DELETE — remove a file
@@ -88,15 +101,17 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ error: "No filename provided" }, { status: 400 });
   }
 
-  // Security: prevent path traversal
-  const safeName = path.basename(filename);
-  const filePath = path.join(UPLOAD_DIR, safeName);
+  try {
+    const ext = filename.lastIndexOf('.');
+    const cleanName = ext > -1 ? filename.substring(0, ext) : filename;
+    const publicId = `sbkheights/${cleanName}`;
+    
+    await cloudinary.uploader.destroy(publicId, { invalidate: true });
+    await cloudinary.uploader.destroy(publicId, { resource_type: 'video', invalidate: true });
 
-  if (!fs.existsSync(filePath)) {
-    return NextResponse.json({ error: "File not found" }, { status: 404 });
+    return NextResponse.json({ deleted: filename });
+  } catch (error) {
+    console.error("Cloudinary delete error:", error);
+    return NextResponse.json({ error: "Failed to delete" }, { status: 500 });
   }
-
-  fs.unlinkSync(filePath);
-
-  return NextResponse.json({ deleted: safeName });
 }
