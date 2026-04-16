@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#43474e",
+                    "tertiary-container": "#2f2000",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#e3c285",
+                    "secondary": "#775a19",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "primary-fixed-dim": "#adc8f6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-fixed-variant": "#5a4313",
+                    "on-primary-fixed-variant": "#2c476f",
+                    "tertiary": "#140b00",
+                    "surface-variant": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdea4",
+                    "inverse-primary": "#adc8f6",
+                    "on-background": "#1a1c1c",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-tertiary-fixed": "#261900",
+                    "on-secondary-fixed": "#261900",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#455f88",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fed488",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-container": "#a3864f",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed": "#d5e3ff",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-container": "#785a1a",
+                    "primary": "#000d22",
+                    "outline": "#74777f",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed": "#ffdea5",
+                    "primary-container": "#002349",
+                    "on-primary-container": "#718bb7",
+                    "surface-container": "#eeeeee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Noto Serif', serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#000d22]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,13,34,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold text-[#002349] dark:text-white tracking-tighter">SBK Heights</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#775a19] dark:text-[#fed488] border-b-2 border-[#775a19] pb-1" href="#">About</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Project</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 text-sm font-['Noto_Serif'] font-medium uppercase tracking-widest scale-100 active:scale-95 transition-transform">
+                Enquire Now
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section: Architectural Legacy -->
+<section class="px-12 mb-32">
+<div class="relative h-[819px] w-full overflow-hidden">
+<img alt="Corporate Headquarters" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Low angle wide shot of a modern glass skyscraper reflecting a clear blue sky, emphasizing verticality and corporate power" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuPXJHooKF7Zy4O_7kVZJ7aYezfqRdZF2uEE5-yX6gnEyfRAu4yg6JZ8aq1Sk5YZLCEIZrhVXC8EQDdl-gKLZQYfxI5O8xf41pYWCpIdmA_vL9G_HFbkyMKWw-iWYTv3GQQvKCKR1TkEBKGpu_YRkUhoJj0WymYPwQBlf7zximhN4s0JpARKiti6fbMchve_6GIgbeIIHfxhGh0k7uXo-vE61TovF4_4HwMKS97IWcZxN2LUbXOB8_C0nqjpIHckOsgAGCFbHdmfc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex items-end p-16">
+<div class="max-w-4xl">
+<span class="text-secondary-fixed-dim uppercase tracking-[0.4rem] text-xs mb-6 block font-label font-bold">The Vertical Monolith</span>
+<h1 class="text-white text-6xl md:text-8xl font-headline mb-8 leading-tight">Architectural Authority Since 1994.</h1>
+</div>
+</div>
+</div>
+</section>
+<!-- Company Description Section -->
+<section class="px-12 mb-40 max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-20 items-start">
+<div class="md:col-span-5">
+<h2 class="text-primary text-5xl font-headline leading-tight mb-12">Redefining the Sky’s Limit.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-8 font-body">
+                        SBK Heights is more than a developer; we are the curators of the modern skyline. Founded on the principle of structural permanence and aesthetic purity, our firm has spent three decades crafting environments that command respect and offer unrivaled luxury.
+                    </p>
+<p class="text-on-surface-variant text-lg leading-relaxed font-body">
+                        Our philosophy centers on "The Vertical Monolith"—the belief that a building should be a singular, powerful statement of intent. We reject the generic in favor of the monumental.
+                    </p>
+</div>
+<div class="md:col-span-7 grid grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-12 flex flex-col justify-between aspect-[4/5]">
+<span class="text-primary text-6xl font-headline">30+</span>
+<div>
+<p class="text-secondary font-label uppercase tracking-widest text-sm font-bold mb-2">Years of Legacy</p>
+<p class="text-on-surface-variant text-sm">A history rooted in engineering excellence and uncompromising quality.</p>
+</div>
+</div>
+<div class="bg-primary text-white p-12 flex flex-col justify-between aspect-[4/5] mt-12">
+<span class="text-secondary-container text-6xl font-headline">12M</span>
+<div>
+<p class="text-secondary-fixed-dim font-label uppercase tracking-widest text-sm font-bold mb-2">Sq Ft Delivered</p>
+<p class="text-surface-variant text-sm">Transforming urban landscapes with high-density, high-luxury vertical living.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Background Information: The Legacy -->
+<section class="bg-surface-container-high py-40 px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="w-full md:w-1/2">
+<img alt="Founders at Work" class="w-full aspect-square object-cover shadow-[0_40px_80px_rgba(0,13,34,0.1)]" data-alt="Close up of architectural blueprints on a dark wooden table with focused warm task lighting and luxury drafting tools" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxjI8_dlsFqYQdH-8UtVz0WuJAcDj8ke7ixclqBHRlPzTGzpiJy7kb9tIyr9p5oq0XZLxg_Y7CPKBTiLRyXkYwbL6vuObcjYwC2Kdy3ovWX95v3hY10jVVNY3w4ImHEsNPs4a94Em7V2Qqpdr_p4E4B0BsSG1Mo5w49EvYdiOEP4hyFaDC4imSWEw8Al1u32JPTRaJhr1R6-qi-prLrrq4HDPgl8LstqKwusW-eYoVpAmODxzR5cOg2bJ83L0bXSyRRgTR03U32Qk"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-secondary uppercase tracking-[0.3rem] text-xs mb-8 block font-label font-bold">Our Heritage</span>
+<h2 class="text-primary text-5xl font-headline mb-12">Built on Principles of Precision.</h2>
+<div class="space-y-12">
+<div class="border-l-2 border-secondary pl-8">
+<h3 class="text-xl font-headline text-primary mb-4">Engineering First</h3>
+<p class="text-on-surface-variant leading-relaxed">Before the first stone is laid, thousands of hours are dedicated to structural analysis. We build for the next century, not just the next decade.</p>
+</div>
+<div class="border-l-2 border-secondary pl-8">
+<h3 class="text-xl font-headline text-primary mb-4">The Editorial Aesthetic</h3>
+<p class="text-on-surface-variant leading-relaxed">Every SBK project is designed to be visually timeless. We utilize raw materials—glass, steel, and stone—to create an editorial presence in every city.</p>
+</div>
+<div class="border-l-2 border-secondary pl-8">
+<h3 class="text-xl font-headline text-primary mb-4">Global Standards</h3>
+<p class="text-on-surface-variant leading-relaxed">From London to Dubai, our consultants represent the peak of global architectural talent, ensuring each Heights project is world-class.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Past Successful Projects: Perspective Gallery -->
+<section class="py-40 px-12 max-w-[1920px] mx-auto">
+<div class="flex justify-between items-end mb-24">
+<div>
+<span class="text-secondary uppercase tracking-[0.3rem] text-xs mb-4 block font-label font-bold">Portfolio</span>
+<h2 class="text-primary text-6xl font-headline">Defining the Horizon.</h2>
+</div>
+<button class="text-primary font-label font-bold uppercase tracking-widest text-sm border-b-2 border-secondary pb-2 hover:text-secondary transition-colors">
+                    View Full Archive
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<div class="space-y-12">
+<div class="group cursor-pointer">
+<div class="overflow-hidden bg-surface-container">
+<img alt="The Zenith Plaza" class="w-full aspect-[3/4] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Modern residential building with geometric balcony patterns and warm interior lighting during dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPPUPva1BukKVBc7N-fOBCCRMwGJfkxEniMYubZrVKurgzrjyIQ6f8xg-0GwP7k34VGygsxCcQ58UjxJ-1OioLxG7rPynXimKHTdBDzqk8XgiaBryqthxofndMrIk4kmXjArTHp3ruN6drIYMoEr3YwdZRhsozrD7f-o2FPjSHd5mHSYOD6b1VZ24H9gBw6DL9b-vwqW56XW8cP7_yF2s6496trjZ4BTSgeeuqL5Eo_QM18gG9l33iSkjutvGpWVCzyl9kvRmyz_A"/>
+</div>
+<h3 class="mt-8 text-2xl font-headline">The Zenith Plaza</h3>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs mt-2">Completed 2018 — Mumbai</p>
+</div>
+<div class="group cursor-pointer translate-y-20">
+<div class="overflow-hidden bg-surface-container">
+<img alt="Meridian Towers" class="w-full aspect-[3/5] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Tall minimalist skyscraper with white facade against a deep blue afternoon sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7i5iweLfZqErMU_76u_MmhhGX4v3fLgWGtZjbaZCAtU2orXCQGFZRU4K3kaDu8IAN_84JeH15t2j_Qcf3Z6YuBD1_sD294bcT7DI4Iqodi1w8dzL8b_JNpqi5p1CZ-mVcjheaa7vih65Cnh8zj-8RsS_I_GV48sly_2PGQFyY7uyCVOYb6QS_9kFV39gEL0KjFNLL7QVH4-Deca54hDafnYb5L8DZ9irAlRW2r5UVXLqphI02iW_MfUxGP8KXrjElBbb7pw95Xtw"/>
+</div>
+<h3 class="mt-8 text-2xl font-headline">Meridian Towers</h3>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs mt-2">Completed 2021 — Pune</p>
+</div>
+</div>
+<div class="space-y-12 pt-24">
+<div class="group cursor-pointer">
+<div class="overflow-hidden bg-surface-container">
+<img alt="The Obsidian" class="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Abstract architectural shot of black glass building reflecting urban surroundings in high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzWNqe5GJPD6zvW0sfUTTGu9loM6FykM_Mwwg9to5G1dbsrtG7WlGvj-VUVnJH6rGVRewLzOFUnWKNoFIf-nEDVGFkoq9cVVxK_4MxEYbslJB5TisaShWJ2TIB2Qwd_I4Go16KXVZfSIrkc_p48IMfevGK_qVxZbOTBgXLlJbuvhm87OZfBnIvXFGzcaFGwOK0ZGB3ndUMadBixkjIvYxuC7ic1Ge4S63plRQ0vgIGduR9b5m1tl55o_76gscAw2GsCJgUda4WLc8"/>
+</div>
+<h3 class="mt-8 text-2xl font-headline">The Obsidian</h3>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs mt-2">Completed 2019 — Bengaluru</p>
+</div>
+<div class="bg-secondary p-16 text-white translate-y-12">
+<span class="material-symbols-outlined text-6xl mb-8" style="font-variation-settings: 'FILL' 0;">architecture</span>
+<h3 class="text-3xl font-headline mb-6">Innovative Structuralism</h3>
+<p class="text-on-secondary/80 leading-relaxed italic">"Architecture is the learned game, correct and magnificent, of forms assembled in light."</p>
+</div>
+</div>
+<div class="space-y-12">
+<div class="group cursor-pointer">
+<div class="overflow-hidden bg-surface-container">
+<img alt="Nova Heights" class="w-full aspect-[4/5] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Ultra-modern white concrete building with sharp angles and clean lines against a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDztNpUcEeHf41NqmXWiz78teGQf-b-iWj2ilwE5WhoHESiJV644tNpW8T0epVLBxa-lCF9AmWUDmzjs6ziIo-p_XxofUAwQJcm5rYbmwVtoEBWIBfdOTR60IBEONVy6e2uV7hnB3Jf4mFjFA3K55853b4zdrHQdTtKl-ciQmccQcLYvZqOENpVYBOFwMBNWaar3uXSLhVvOJ55_ocp1py4mwpTuiJ-3xbv_W_RFXb4rdb499Na0aer1ML3fI1c5Zu_3hPrpTTwGKg"/>
+</div>
+<h3 class="mt-8 text-2xl font-headline">Nova Heights</h3>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs mt-2">Completed 2023 — Hyderabad</p>
+</div>
+<div class="group cursor-pointer translate-y-32">
+<div class="overflow-hidden bg-surface-container">
+<img alt="Legacy Corporate Park" class="w-full aspect-[3/4] object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Sleek modern office park with reflecting pools and manicured luxury landscaping" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiGyyHDy7xXliaEvOGYUEyFdin_Sk1kSvnThS796Wd_FfezoSiys3Lk2tLuRx8WqidbdYQxC5YByJHumldxEDJf0jtwoSv78ycF7kpMxW2HHqmUrmDZfEMkSvgF1xG8kZoDrrCk3pW8rYZfST62EVJv4APCjPs9JY9FAFn-WalYO-KjYGqRROZPMTqhDvNn0y_oE3yfHzhUpRWE_u6ol8xJv6NaZTNtqQOdjs6udTSWwzB7X7kr6YGQVSwb2U2Irnl-axRlXaJYF4"/>
+</div>
+<h3 class="mt-8 text-2xl font-headline">Legacy Corporate Park</h3>
+<p class="text-on-surface-variant uppercase tracking-widest text-xs mt-2">Completed 2017 — Noida</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-primary text-white py-32 px-12 text-center overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 flex justify-center items-center pointer-events-none">
+<span class="text-[40rem] font-headline select-none">SBK</span>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-headline mb-12">Witness the Height of Luxury.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<button class="bg-secondary text-white px-12 py-5 text-sm font-label font-bold uppercase tracking-widest hover:opacity-90 transition-all">
+                        Request Portfolio
+                    </button>
+<button class="border-2 border-white/20 px-12 py-5 text-sm font-label font-bold uppercase tracking-widest hover:bg-white hover:text-primary transition-all">
+                        Corporate Overview
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#000d22] text-white w-full border-t border-[#74777f]/30">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="flex flex-col justify-between">
+<div>
+<div class="text-xl font-bold text-[#fed488] mb-8">SBK Heights</div>
+<p class="text-gray-400 font-['Manrope'] text-sm tracking-wide leading-relaxed max-w-xs">
+                        Elevating urban existence through structural integrity and timeless architectural design since 1994.
+                    </p>
+</div>
+<div class="flex gap-6 mt-8">
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white transition-colors">public</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white transition-colors">mail</span>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer hover:text-white transition-colors">call</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-[#fed488] uppercase tracking-widest text-xs font-bold mb-6">Navigation</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Home</a></li>
+<li><a class="text-[#fed488]" href="#">About</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Gallery</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Project</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[#fed488] uppercase tracking-widest text-xs font-bold mb-6">Legal</h4>
+<ul class="space-y-4 font-['Manrope'] text-sm">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<div class="flex flex-col items-end justify-between text-right">
+<div class="max-w-xs">
+<h4 class="text-[#fed488] uppercase tracking-widest text-xs font-bold mb-6">Newsletter</h4>
+<p class="text-gray-400 text-xs mb-4">Stay informed about upcoming heights and exclusive penthouse reveals.</p>
+<div class="flex border-b border-gray-700 py-2">
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full" placeholder="Email Address" type="email"/>
+<span class="material-symbols-outlined text-gray-400 cursor-pointer">arrow_forward</span>
+</div>
+</div>
+<div class="text-gray-400 font-['Manrope'] text-sm tracking-wide mt-12">
+                    © 2024 SBK Heights. All Rights Reserved.
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

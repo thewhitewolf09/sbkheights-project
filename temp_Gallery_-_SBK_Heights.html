@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | SBK Heights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#43474e",
+                    "tertiary-container": "#2f2000",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#e3c285",
+                    "secondary": "#775a19",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "primary-fixed-dim": "#adc8f6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary-fixed-variant": "#5a4313",
+                    "on-primary-fixed-variant": "#2c476f",
+                    "tertiary": "#140b00",
+                    "surface-variant": "#e2e2e2",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdea4",
+                    "inverse-primary": "#adc8f6",
+                    "on-background": "#1a1c1c",
+                    "secondary-fixed-dim": "#e9c176",
+                    "on-tertiary-fixed": "#261900",
+                    "on-secondary-fixed": "#261900",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#455f88",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fed488",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary-container": "#a3864f",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed": "#d5e3ff",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-container": "#785a1a",
+                    "primary": "#000d22",
+                    "outline": "#74777f",
+                    "inverse-on-surface": "#f1f1f1",
+                    "surface": "#f9f9f9",
+                    "on-primary-fixed": "#001b3c",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed": "#ffdea5",
+                    "primary-container": "#002349",
+                    "on-primary-container": "#718bb7",
+                    "surface-container": "#eeeeee"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#000d22]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,13,34,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold text-[#002349] dark:text-white tracking-tighter font-headline">SBK Heights</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-headline font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Home</a>
+<a class="font-headline font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">About</a>
+<a class="font-headline font-medium uppercase tracking-[0.05rem] text-sm text-[#775a19] dark:text-[#fed488] border-b-2 border-[#775a19] pb-1" href="#">Gallery</a>
+<a class="font-headline font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Project</a>
+<a class="font-headline font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-headline font-medium uppercase tracking-widest text-xs scale-100 active:scale-95 transition-transform">
+                Enquire Now
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-12 mb-24 max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<span class="label-md font-label font-bold uppercase tracking-[0.2em] text-secondary mb-4 block">Visual Journey</span>
+<h1 class="text-6xl md:text-8xl font-headline text-primary tracking-tighter leading-[0.9]">Architectural Excellence In Frame</h1>
+</div>
+<div class="flex gap-4 pb-2">
+<button class="flex items-center gap-2 px-6 py-2 bg-surface-container-high hover:bg-secondary-container transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary">photo_library</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Images</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-2 bg-surface hover:bg-secondary-container transition-colors group">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary">videocam</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Cinema</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Photography Masonry -->
+<section class="px-12 max-w-[1920px] mx-auto mb-32">
+<div class="masonry-grid">
+<!-- Large Vertical -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Exterior View" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="stunning ultra-modern skyscraper exterior at dusk with warm glowing interior lights and sharp architectural lines against a deep blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWfM0VUWJnK5HXEIgRAFdYtEHw5b6-VCAmQM2DOVcWGojk72wXP8EaXPwLLNrBqqxcGw_WNb8FAjA6-32SfDNTIHWL7V-G0-l3XJIPr-7cFLN2o3oIlswd-MPLGUZsni29rjVvCn0bKnfpJrSSCmCt_LNYON6qmL9-X6lpt-1t2p-kAMXgmDQMan9kFRXvA-CpnO5pTa6FWtY8tQOz_uem7go1q7Dji1l8yE9a_h1eTLpsqDEayY9c0W77TrvnC31-4P9wwx-DgRo"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+<!-- Square -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Lobby Design" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="luxurious minimal hotel lobby with marble floors, gold accents, and a large architectural lighting installation in soft warm light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM3KBrnRMDLtwexpptevWiKfevGND3PlfWcivjxGnh_HBOSVIS3CiJv2SFnCwd3oFvwJzmUxPbzm-DoRHqgn39xsNMX9uDG3rHb4kZQZy0A7A6_-bJJ4cL_e8_uEryBp2kQRnBrPqOUpNw1t_xhcSv0MhKx6F047cvMS_Z2hP5ZPbDgw5qArj2Z0_w7hVvey6wcch17tc9EdZ-Byasqt4R_Mpg6T7c4HyiV2sXWgxzFh894vA9OyEDmeZo6mvPyH9-zqgPGqSKtSc"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+<!-- Landscape -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Penthouse Living" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="modern penthouse living room with floor-to-ceiling windows showing a city skyline at sunset and high-end designer furniture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1sRn8MKC5aZTVdouLNMNvi7RkE2U5qLwORkKhaV0j627B_UY805W1FhKBFb0m7mOBbxhX6AITr1sQ9ZHjqcoKlxjajUCVqgxQAMngZYnBWPvKfzWaT8TBYiE-1b_av3t03M9VRK4D0x-nrTzcFePVP91-cBUbMTD8B4CiXFqUDW3IbaY8Lm-XDI19yd062op-5uPwrnDDUkUBRQQ1b-Ct6giFJP9h49UtiHjvq-aUGsclsLy7cmUkmBx0ZyWtNwWMTu2C7RRnOq8"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+<!-- Vertical -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Staircase Architecture" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="abstract architectural shot of a spiraling minimalist white staircase with sharp shadows and geometric precision in bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiuXq1sijVTzpti6h4_uey43lfsjH1KsAAzBwcxzTaUvNDb2Yrx-NCqCFE1RAKzC8u7c23S7pa9Ftr9GOFn4SlMJMmAAHSlx4-PYbmg0XRSfCabVXfuwCTS1TgKTnf3nauyunFng8aXkWMzFO01ok58CGt94Cdn-Y20O913kuedoG1JvSF1ALmQkEUtan6noGDWFnPZYZhgfoFSSedTGYzrpvE0aNhq7a0WUpr0M6sKyrsVEZUrW0ZRei5dCOyYYxqKE7KESE54_s"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+<!-- Large Square -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Master Suite" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="high-end minimalist bedroom suite with dark wood paneling, premium linens, and a view of the city heights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBdOugxmycuzkpG8d-gO0thTKlyzpmYVGrWLskZwzLsg_xDF3TYrAMPaN-E-olRuzXEM1NzU-4etjOpn_Ya9onxA7tI_rT3ZBreNrWJRMdK4xVNkxujmy-AYTnWTRhPQ5gwkeex1P-6hTfrSR7QGqI6PR9zm20rkgO14o5O4YN7UdIlKxnSfzzrRo0pPuMCfS6pOdoD6LP0Dahb4yitapXKSq-N687HhoAKFTjut4dT5J7IcyenV7WlEOmMV04luksr2VqYBV4Qts"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+<!-- Vertical -->
+<div class="masonry-item relative group overflow-hidden cursor-pointer">
+<img alt="Infinity Pool" class="w-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0" data-alt="luxury rooftop infinity pool reflecting the clear sky with sleek stone decking and modern lounge chairs at high altitude" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdClST8RwIwNQUNdfbPiyR6b01sycDkN79VskHuWcFWJ6qX_jGkX3xUE7bY9X7Tnsr53MybRnX-jXDYdIIkLpZ-NNwvD65bT_k5hsXiES9B9bdbsVCfo6NQGGjG7IIcZu0-275dI0nm3HK-vVkTx5hjeuxyRFpWqgORjlLRm74f5KP3CCFJeH9Ai9DYKqS5dV6nhKEdIMMhKNiFqBpLecGI1NHqgmxRv_7outG0s6nPMHxY3IFiAr9pbuWVD_myCCDjd2uI-wTTbk"/>
+<div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">zoom_in</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Cinema Section -->
+<section class="bg-primary py-32">
+<div class="px-12 max-w-[1920px] mx-auto">
+<div class="flex flex-col mb-16">
+<span class="label-md font-label font-bold uppercase tracking-[0.2em] text-secondary-container mb-4">Cinematic Experience</span>
+<h2 class="text-5xl font-headline text-white tracking-tighter max-w-2xl">The Heights in Motion</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Main Video Player -->
+<div class="relative aspect-video group cursor-pointer overflow-hidden">
+<div class="absolute inset-0 z-10 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+<div class="w-24 h-24 border border-white/50 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform bg-white/10 backdrop-blur-sm">
+<span class="material-symbols-outlined text-white text-5xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<img alt="Video Preview" class="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 scale-105 group-hover:scale-100" data-alt="cinematic drone shot of a glass skyscraper reaching into the clouds during a golden sunset with lens flares" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUi6hMxXSyP2Osvnr46v5zTmChpBCRLOQZDCkH1Vr9PTka3LofCARNSK6DEtrU-T8uGhBpjJSiM9t9jkcLHKjj_ygIX821U7z2vqfFv1FXpnTtRJKy5bprIF5iT2L5244VXTg4e_2y5Ytoj4aFWkxJ2WT47WIWqY3CfoREujOsk4adZ9dh_rnabEqBGDgJZqSt0yijzr90dZ1gbwUXP8q8-9NXaaDSMGgV_B0ihmUj3fTwzI-Dw0mGCNM2NE61Npc82M7goicEUUs"/>
+<div class="absolute bottom-8 left-8 z-20">
+<p class="text-white font-headline text-2xl tracking-tight">Official Drone Walkthrough 2024</p>
+<p class="text-secondary-container font-label uppercase text-xs tracking-widest mt-2">4:32 MIN • 4K ULTRA HD</p>
+</div>
+</div>
+<!-- Video Playlist/Links -->
+<div class="flex flex-col justify-center space-y-8">
+<div class="group flex gap-8 items-center cursor-pointer p-6 hover:bg-white/5 transition-colors">
+<div class="w-32 aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity" data-alt="interior architectural shot of a modern office space with minimalist furniture and high glass walls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBovZQQdU475y0PeWKm_tjE1EMrQUAgBqFVJvxcWQUroYIdNuLicSc-ghPAbC3izwW7mgF-8xlFstU0TGQ07HlyRCOokvvVFwpnn8fO56SRaar_V8ciRd48UHDS0PDdWcg4ZVfpo6bgiF97Fkwh4MLmEWLWu-V8D2NW6flYlgWkvo9nl57rvEQg6yWuWTV6HACQ3TpCf08DSTubS1jydEbsQ86sjwdYGW5mQhWoNwyXvKkLEfRdeDzUjD7uvLXhK1nt3RB8nph9i70"/>
+</div>
+<div>
+<h3 class="text-white font-headline text-xl mb-1 group-hover:text-secondary-container transition-colors">The Master Suite Reveal</h3>
+<p class="text-gray-400 font-label text-xs uppercase tracking-widest">Interior Tour • 2:15</p>
+</div>
+</div>
+<div class="group flex gap-8 items-center cursor-pointer p-6 hover:bg-white/5 transition-colors border-y border-white/10">
+<div class="w-32 aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity" data-alt="luxury apartment balcony view at night with city lights reflecting in the floor-to-ceiling glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWs1vYWtmV1u71E8zTvYts3fWr6y_C2ewUnkGPBC10r0w3of7BpXiW3ytnC1wos7gMTN1VmasnRGKqbtSRJzwqSXsBD8e-zMWF4PKlmj27HhQD49-fikJP9gyyho22CnnGO6Z86Zcst9dZCgVOYH2cYoYIgwfHLrXi37mqjzIYBlPqYsC0lbuoouib3UzBm_iSt35exdT1iYt33FyNqm9SdZWAhOT9kLNE6CJXfWcz1Bp1k_7Ns-FHMQo254Cr96uLZhftE03mTCc"/>
+</div>
+<div>
+<h3 class="text-white font-headline text-xl mb-1 group-hover:text-secondary-container transition-colors">Skyline Night Views</h3>
+<p class="text-gray-400 font-label text-xs uppercase tracking-widest">Exterior Cinema • 1:45</p>
+</div>
+</div>
+<div class="group flex gap-8 items-center cursor-pointer p-6 hover:bg-white/5 transition-colors">
+<div class="w-32 aspect-video bg-surface-container-low overflow-hidden">
+<img alt="Preview" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity" data-alt="close up of premium architectural materials like burnished gold metal and deep navy stone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAihOFIdt7S6TcuTnhplxnWntasi0MoHFRfndsoXO7m5Ckjr4ANUXmxQ8_SkVcZE92fCPLzTOzK4j6dNB5xOCuV3CnAi0_9DRYkpdP8GzAoDvY14VqKbdADfozQFWsx3xrJPkL6mojmOmqcTR2ntYUahgMv2mphHGwP2U8Sr0MdVkHimuBrSAjmMu1grgpyRUiu6uDGJ1_Td-Glgo2yhJViZoa1V0tRp0CSrtrIyX4zPQHdFthdA7abf_MpnDQ7MaPRigTinPO4bHg"/>
+</div>
+<div>
+<h3 class="text-white font-headline text-xl mb-1 group-hover:text-secondary-container transition-colors">Craftsmanship &amp; Detail</h3>
+<p class="text-gray-400 font-label text-xs uppercase tracking-widest">Brand Film • 3:10</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Perspective Quote / Interstitial -->
+<section class="py-40 px-12 bg-surface text-center overflow-hidden">
+<div class="max-w-4xl mx-auto relative">
+<span class="text-[12rem] font-headline text-surface-container absolute -top-24 left-1/2 -translate-x-1/2 -z-10 opacity-50">"</span>
+<p class="text-3xl md:text-5xl font-headline text-primary leading-tight italic">
+                    Architecture should speak of its time and place, but yearn for timelessness.
+                </p>
+<div class="mt-12 w-24 h-px bg-secondary mx-auto"></div>
+<p class="mt-8 font-label uppercase tracking-[0.3em] text-sm font-bold text-secondary">The SBK Philosophy</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#000d22] border-t border-[#74777f]/30">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold text-[#fed488] font-headline">SBK Heights</div>
+<p class="text-gray-400 font-body text-sm leading-relaxed max-w-xs">
+                    Redefining urban luxury through architectural precision and vertical excellence. Elevate your lifestyle at the peak of the city.
+                </p>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-headline uppercase tracking-widest text-xs">Explore</h4>
+<ul class="space-y-4">
+<li><a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Residential Collection</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Amenities &amp; Lifestyle</a></li>
+<li><a class="text-[#fed488] transition-colors text-sm font-bold" href="#">Photo &amp; Video Gallery</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Architectural Vision</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="text-white font-headline uppercase tracking-widest text-xs">Legal</h4>
+<div class="flex flex-wrap gap-x-8 gap-y-4">
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Terms of Service</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Cookie Policy</a>
+<a class="text-gray-400 hover:text-white transition-colors text-sm" href="#">Sitemap</a>
+</div>
+<div class="pt-8 border-t border-white/10">
+<p class="text-gray-400 font-body text-xs tracking-wide">© 2024 SBK Heights. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Nav -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg z-50 px-6 py-4 flex justify-around items-center border-t border-surface-container-high">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#775a19]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Gallery</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">apartment</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Project</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Contact</span>
+</button>
+</div>
+</body></html>

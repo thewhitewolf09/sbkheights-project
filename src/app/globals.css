@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* SBK Heights - Emerald Horizon Palette */
+  --color-primary: #114c2e;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #1b6d44;
+  --color-on-primary-container: #a3d9b8;
+
+  --color-secondary: #c9960c;
+  --color-on-secondary: #1a0e00;
+  --color-secondary-container: #3d2800;
+  --color-on-secondary-container: #ffd878;
+
+  --color-surface: #fdfdfc;
+  --color-on-surface: #161d18;
+  --color-surface-variant: #e0e4df;
+  --color-on-surface-variant: #434944;
+  
+  --color-background: #fdfdfc;
+  --color-on-background: #161d18;
+
+  --color-outline: #707971;
+  --color-outline-variant: #c0c9c1;
+
+  --font-headline: var(--font-playfair, "Playfair Display", serif);
+  --font-body: var(--font-outfit, "Outfit", sans-serif);
+  --font-label: var(--font-outfit, "Outfit", sans-serif);
+}
+
+/* Base Body Styles */
+body {
+  background-color: #fdfdfc !important;
+  color: #161d18;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+}
+
+/* 
+   THEME COLOR GRADING 
+   Special filter to shift blue architectural sky/reflections into the Emerald palette.
+   Uses a combination of sepia (for gold undertones) and hue-rotation.
+*/
+.image-emerald {
+  filter: sepia(0.2) hue-rotate(160deg) saturate(1.4) contrast(1.05) brightness(0.9);
+}
+
+/* Premium Gold Shimmer */
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #f5c518 0%, #c9960c 35%, #e8b008 65%, #f5c518 100%);
+  background-size: 200% auto;
+  animation: gold-shimmer 5s linear infinite;
+}
+
+@keyframes gold-shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* 
+   GLOW REMOVAL & VIGNETTE PURGE
+   Addresses reports of 'blue viewport glow'. 
+   Neutralizes any global gradients or shadows that might be interpreted as blue.
+*/
+* {
+  --tw-shadow: none !important;
+  --tw-ring-color: transparent !important;
+}
+
+html, body {
+  box-shadow: none !important;
+  background-image: none !important;
+  outline: none !important;
+}
+
+main {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Force specific shadows only where intended */
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+}
+
+/* Hide Scrollbar globally */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* ============================================================
+   PREMIUM LEATHER / MATTE TEXTURE  — replaces flat bg-primary
+   Layer stack (bottom → top):
+     1. Base deep teal  #051f14
+     2. SVG turbulence noise  → leather / matte-paper grain
+     3. Radial vignette        → darkened corners, lit centre
+   ============================================================ */
+
+@layer utilities {
+  .bg-primary {
+    background-color: #114c2e;
+    background-image:
+      /* 3. Vignette — dramatically darkened edges, warm-tinted centre */
+      radial-gradient(
+        ellipse 120% 100% at 50% 40%,
+        rgba(8, 40, 24, 0.00) 0%,
+        rgba(4, 18, 11, 0.45) 55%,
+        rgba(1,  8,  5, 0.82) 100%
+      ),
+      /* 2. Fine noise grain — SVG feTurbulence baked as data URI */
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E");
+    background-size: auto, 400px 400px;
+    background-repeat: no-repeat, repeat;
+  }
+
+  .bg-primary-container {
+    background-color: #1b6d44;
+    background-image:
+      radial-gradient(
+        ellipse 120% 100% at 50% 40%,
+        rgba(12, 50, 30, 0.00) 0%,
+        rgba(6,  25, 15, 0.40) 55%,
+        rgba(2,  10,  6, 0.75) 100%
+      ),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeBlend in='SourceGraphic' mode='multiply'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E");
+    background-size: auto, 400px 400px;
+    background-repeat: no-repeat, repeat;
+  }
+}

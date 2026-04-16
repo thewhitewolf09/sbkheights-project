@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#775a19",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#718bb7",
+                    "on-secondary-container": "#785a1a",
+                    "inverse-primary": "#adc8f6",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#2c476f",
+                    "on-background": "#1a1c1c",
+                    "on-tertiary-container": "#a3864f",
+                    "secondary-fixed": "#ffdea5",
+                    "surface-container-low": "#f3f3f3",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#e9c176",
+                    "tertiary-fixed-dim": "#e3c285",
+                    "background": "#f9f9f9",
+                    "inverse-surface": "#2f3131",
+                    "secondary-container": "#fed488",
+                    "on-tertiary-fixed": "#261900",
+                    "tertiary": "#140b00",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5a4313",
+                    "primary-container": "#002349",
+                    "primary-fixed": "#d5e3ff",
+                    "outline": "#74777f",
+                    "surface-bright": "#f9f9f9",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container": "#eeeeee",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#2f2000",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "primary-fixed-dim": "#adc8f6",
+                    "on-surface-variant": "#43474e",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9f9",
+                    "surface-tint": "#455f88",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#5d4201",
+                    "on-secondary-fixed": "#261900",
+                    "outline-variant": "#c4c6cf",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#ffdea4",
+                    "on-surface": "#1a1c1c",
+                    "primary": "#000d22",
+                    "inverse-on-surface": "#f1f1f1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            font-family: 'Noto Serif', serif;
+        }
+        /* Editorial spacing for legal docs */
+        .legal-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #43474e;
+        }
+        .legal-content h2 {
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(116, 119, 127, 0.1);
+            padding-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#000d22]/80 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,13,34,0.06)]">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<a class="text-2xl font-bold text-[#002349] dark:text-white tracking-tighter" href="#">SBK Heights</a>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Home</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">About</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Project</a>
+<a class="font-['Noto_Serif'] font-medium uppercase tracking-[0.05rem] text-sm text-[#000d22] dark:text-gray-300 hover:text-[#775a19] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 font-['Manrope'] text-xs uppercase tracking-widest font-bold scale-100 active:scale-95 transition-transform">
+                Enquire Now
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-20">
+<div class="inline-block bg-secondary-container px-4 py-1 mb-6">
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-secondary-container">Legal Document</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold text-primary mb-8 leading-tight">Privacy Policy &amp; <br/>Terms of Service</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg font-light leading-relaxed">
+                Last Updated: October 24, 2024. Please read these terms carefully before engaging with SBK Heights digital platforms and physical services.
+            </p>
+</header>
+<!-- Navigation Anchors (Bento Style Sidebar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<aside class="lg:col-span-3 hidden lg:block">
+<div class="sticky top-40 space-y-8">
+<nav class="flex flex-col space-y-4">
+<a class="text-secondary font-bold text-sm uppercase tracking-widest border-l-2 border-secondary pl-4" href="#privacy">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary font-medium text-sm uppercase tracking-widest pl-4 transition-colors" href="#terms">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary font-medium text-sm uppercase tracking-widest pl-4 transition-colors" href="#cookies">Cookie Usage</a>
+</nav>
+<div class="bg-surface-container-low p-8">
+<h4 class="font-headline text-lg font-bold mb-4">Questions?</h4>
+<p class="text-xs text-on-surface-variant mb-6 leading-relaxed">Our legal team is available to clarify any aspects of our service agreements.</p>
+<a class="text-secondary text-sm font-bold border-b border-secondary pb-1 inline-block" href="mailto:legal@sbkheights.com">legal@sbkheights.com</a>
+</div>
+</div>
+</aside>
+<!-- Document Content -->
+<article class="lg:col-span-9 legal-content">
+<!-- Privacy Policy Section -->
+<section class="mb-24" id="privacy">
+<h2 class="text-3xl font-bold text-primary">01. Privacy Policy</h2>
+<p>At SBK Heights, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.</p>
+<h3 class="text-xl font-bold mt-12 mb-6 text-primary uppercase tracking-wider">Information We Collect</h3>
+<p>Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been removed (anonymous data). We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+<ul class="space-y-4 text-on-surface-variant mb-8 list-none">
+<li class="flex items-start">
+<span class="text-secondary mr-4 font-bold">I.</span>
+<span><strong>Identity Data:</strong> Includes first name, maiden name, last name, username or similar identifier, marital status, title, date of birth and gender.</span>
+</li>
+<li class="flex items-start">
+<span class="text-secondary mr-4 font-bold">II.</span>
+<span><strong>Contact Data:</strong> Includes billing address, delivery address, email address and telephone numbers.</span>
+</li>
+<li class="flex items-start">
+<span class="text-secondary mr-4 font-bold">III.</span>
+<span><strong>Financial Data:</strong> Includes bank account and payment card details relevant to luxury property transactions.</span>
+</li>
+</ul>
+<h3 class="text-xl font-bold mt-12 mb-6 text-primary uppercase tracking-wider">How We Use Your Data</h3>
+<p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+<div class="p-6 bg-surface-container border-l-4 border-secondary">
+<h4 class="font-bold text-primary mb-2">Performance of Contract</h4>
+<p class="text-sm m-0">This means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.</p>
+</div>
+<div class="p-6 bg-surface-container border-l-4 border-secondary">
+<h4 class="font-bold text-primary mb-2">Legitimate Interest</h4>
+<p class="text-sm m-0">The interest of our business in conducting and managing our business to enable us to give you the best service and the best and most secure experience.</p>
+</div>
+</div>
+</section>
+<!-- Architectural Break Image -->
+<div class="w-full h-80 overflow-hidden mb-24">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="dramatic upward angle of a sleek modern skyscraper facade with glass reflections and deep navy blue architectural elements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzunwKneXiJ4jtNjQDRWMpw6xVlX61wDqaUL2XYN7NNVnzZveFgeVmD1yFq_ZSxpRgkh9tlXDBfJDwyy7Iwj0dSNXcZedqBDb-zSh8DXoG1EhQp8HQPsZ0PWhK77G4Kj5BTY_OoqgOOIN5iw9vl678NNTmFmXIRom1ATNsQ-9ESpA7cfz1qaer-bB51X8I-mOffUVeer4CKuMzKcYpk-10ey7prhVRR2ExQERArFu5of6OXHEgtqRegMz-Oz0xR-hGjTEQGk3hEFo"/>
+</div>
+<!-- Terms of Service Section -->
+<section class="mb-24" id="terms">
+<h2 class="text-3xl font-bold text-primary">02. Terms of Service</h2>
+<p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use SBK Heights if you do not agree to take all of the terms and conditions stated on this page.</p>
+<h3 class="text-xl font-bold mt-12 mb-6 text-primary uppercase tracking-wider">Intellectual Property Rights</h3>
+<p>Unless otherwise stated, SBK Heights and/or its licensors own the intellectual property rights for all material on SBK Heights. All intellectual property rights are reserved. You may access this from SBK Heights for your own personal use subjected to restrictions set in these terms and conditions.</p>
+<div class="border-y border-outline-variant py-8 my-10">
+<p class="italic text-on-surface-variant font-light">"The vertical monolith and all architectural renderings displayed herein are the sole property of SBK Heights. Unauthorized reproduction or digital harvesting is strictly prohibited."</p>
+</div>
+<h3 class="text-xl font-bold mt-12 mb-6 text-primary uppercase tracking-wider">Limitation of Liability</h3>
+<p>In no event shall SBK Heights, nor any of its officers, directors and employees, be held liable for anything arising out of or in any way connected with your use of this website whether such liability is under contract. SBK Heights, including its officers, directors and employees shall not be held liable for any indirect, consequential or special liability arising out of or in any way related to your use of this website.</p>
+<h3 class="text-xl font-bold mt-12 mb-6 text-primary uppercase tracking-wider">Governing Law</h3>
+<p>These terms and conditions are governed by and construed in accordance with the laws of the jurisdiction in which SBK Heights operates, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
+</section>
+<!-- Final Note Section -->
+<section class="bg-primary p-12 text-on-primary mt-32">
+<h2 class="text-2xl font-bold mb-6 text-on-primary mt-0 border-none">Commitment to Excellence</h2>
+<p class="text-on-primary-container leading-relaxed mb-8">
+                        SBK Heights is built on a foundation of trust and architectural integrity. These legal documents ensure that our relationship with our clients remains as structured and permanent as the edifices we design.
+                    </p>
+<button class="bg-secondary text-on-secondary px-8 py-4 font-bold uppercase tracking-[0.2em] text-xs">
+                        Download Full Legal Packet (PDF)
+                    </button>
+</section>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#74777f]/30 bg-[#000d22] text-white">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 px-12 py-20 w-full max-w-[1920px] mx-auto font-['Manrope'] text-sm tracking-wide">
+<!-- Brand Info -->
+<div class="space-y-6">
+<span class="text-xl font-bold text-[#fed488]">SBK Heights</span>
+<p class="text-gray-400 max-w-xs leading-loose">
+                    Defining the vertical landscape through uncompromising architectural luxury and structural excellence.
+                </p>
+</div>
+<!-- Navigation Links -->
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h5 class="text-[#fed488] font-bold uppercase tracking-widest text-[10px]">Company</h5>
+<ul class="space-y-3">
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Portfolio</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">News</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="text-[#fed488] font-bold uppercase tracking-widest text-[10px]">Legal</h5>
+<ul class="space-y-3">
+<li><a class="text-[#fed488]" href="#">Privacy Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-gray-400 hover:text-white transition-colors" href="#">Sitemap</a></li>
+</ul>
+</div>
+</div>
+<!-- Contact -->
+<div class="space-y-6">
+<h5 class="text-[#fed488] font-bold uppercase tracking-widest text-[10px]">Headquarters</h5>
+<p class="text-gray-400 leading-loose">
+                    1200 Skyview Plaza, Financial District<br/>
+                    New York, NY 10004
+                </p>
+<div class="flex space-x-6">
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fed488] cursor-pointer" data-icon="public">public</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fed488] cursor-pointer" data-icon="mail">mail</span>
+<span class="material-symbols-outlined text-gray-400 hover:text-[#fed488] cursor-pointer" data-icon="call">call</span>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center max-w-[1920px] mx-auto text-[10px] text-gray-500 uppercase tracking-widest font-bold">
+<span>© 2024 SBK Heights. All Rights Reserved.</span>
+<div class="mt-4 md:mt-0 space-x-8">
+<span>Registration No: 4882-99-X</span>
+<span>ISO 9001 Certified</span>
+</div>
+</div>
+</footer>
+</body></html>
