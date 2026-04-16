@@ -7,8 +7,6 @@ export default function ContactUsPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-  const [data, setData] = useState<any>(null);
-
   const fallback = {
     header: { badge: "Visit Our Site", title: "Find Your Dream \nHouse Today." },
     details: { 
@@ -28,6 +26,8 @@ export default function ContactUsPage() {
     }
   };
 
+  const [data, setData] = useState<any>(fallback);
+
   useEffect(() => {
     async function load() {
       const cms = await getCMSContent("contact", "main");
@@ -39,8 +39,6 @@ export default function ContactUsPage() {
           details: { ...fallback.details, ...cms.details },
           map: { ...fallback.map, ...cms.map }
         });
-      } else {
-        setData(fallback);
       }
     }
     load();
@@ -66,12 +64,6 @@ export default function ContactUsPage() {
     }
     setLoading(false);
   }
-
-  if (!data) return (
-    <div className="min-h-screen bg-primary flex items-center justify-center font-label text-secondary uppercase tracking-[0.5rem] animate-pulse">
-      Establishing Connection...
-    </div>
-  );
 
   return (
     <>
