@@ -132,7 +132,7 @@ export default function MediaLibraryPage() {
   };
 
   const copyUrl = (url: string) => {
-    navigator.clipboard.writeText(window.location.origin + url);
+    navigator.clipboard.writeText(url);
     showToast("URL copied to clipboard");
   };
 
