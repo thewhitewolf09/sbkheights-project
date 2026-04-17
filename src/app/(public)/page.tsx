@@ -95,7 +95,7 @@ export default async function Home() {
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent z-10"></div>
-        <div className="relative z-20 px-6 md:px-12 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 px-6 md:px-12 pt-24 md:pt-32 max-w-7xl mx-auto w-full">
           <div className="max-w-4xl">
             <FadeIn delay={0.2}>
               <span className="block text-secondary uppercase tracking-[0.4rem] font-label font-black mb-6 text-xs">

@@ -24,7 +24,7 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
           <StaggerItem key={i} className="relative group overflow-hidden cursor-pointer block aspect-[4/3]" onClick={() => setSelectedImage(item)}>
             <img
               alt={item.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               src={item.url}
             />
             <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center">
