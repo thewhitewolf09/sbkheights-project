@@ -99,6 +99,15 @@ export default function HomeCMSEditor() {
                     className="w-full bg-surface p-4 text-xs font-label uppercase tracking-widest outline-none border-b border-transparent focus:border-secondary transition-all" 
                   />
                 </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Background Image URL</label>
+                  <input 
+                    type="text" 
+                    value={content.hero.image || ""} 
+                    onChange={(e) => setContent({ ...content, hero: { ...content.hero, image: e.target.value } })}
+                    className="w-full bg-surface p-4 text-xs font-label outline-none border-b border-transparent focus:border-secondary transition-all" 
+                  />
+                </div>
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Main Title</label>
@@ -176,6 +185,26 @@ export default function HomeCMSEditor() {
                   onChange={(e) => setContent({ ...content, vision: { ...content.vision, quote: e.target.value } })}
                   className="w-full bg-surface p-4 text-xs font-label uppercase tracking-widest outline-none" 
                 />
+              </div>
+              <div className="grid grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Left Image URL</label>
+                  <input 
+                    type="text" 
+                    value={content.vision.image_left || ""} 
+                    onChange={(e) => setContent({ ...content, vision: { ...content.vision, image_left: e.target.value } })}
+                    className="w-full bg-surface p-4 text-xs font-label outline-none border-b border-transparent focus:border-secondary transition-all" 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Right Space Image URL</label>
+                  <input 
+                    type="text" 
+                    value={content.vision.image_right || ""} 
+                    onChange={(e) => setContent({ ...content, vision: { ...content.vision, image_right: e.target.value } })}
+                    className="w-full bg-surface p-4 text-xs font-label outline-none border-b border-transparent focus:border-secondary transition-all" 
+                  />
+                </div>
               </div>
             </div>
           </FadeIn>

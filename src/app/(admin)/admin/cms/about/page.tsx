@@ -135,6 +135,10 @@ export default function AboutCMSEditor() {
                   <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Main Headline</label>
                   <textarea value={content.hero.title} onChange={(e) => setContent({...content, hero: {...content.hero, title: e.target.value}})} className="w-full bg-surface p-4 text-2xl font-headline text-primary outline-none" />
                </div>
+               <div className="space-y-1">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Background Image URL</label>
+                  <input type="text" value={content.hero.image || ""} onChange={(e) => setContent({...content, hero: {...content.hero, image: e.target.value}})} className="w-full bg-surface p-4 text-xs font-label outline-none" />
+               </div>
             </div>
           </FadeIn>
 
@@ -181,6 +185,12 @@ export default function AboutCMSEditor() {
           <FadeIn className="bg-white p-10 border border-outline-variant/10">
             <h3 className="text-xl font-headline text-primary mb-8 pb-4 border-b border-outline-variant/5 uppercase tracking-tighter text-secondary">D. Portfolio of Excellence</h3>
             <div className="space-y-12">
+               {/* Portfolio Image */}
+               <div className="space-y-1 pb-8 border-b border-outline-variant/10">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Side Display Image URL</label>
+                  <input type="text" value={content.portfolio?.image || ""} onChange={(e) => setContent({...content, portfolio: {...content.portfolio, image: e.target.value}})} className="w-full bg-surface p-4 text-xs font-label outline-none" />
+               </div>
+
                {/* Completed Landmarks */}
                <div>
                   <div className="flex justify-between items-center mb-6">

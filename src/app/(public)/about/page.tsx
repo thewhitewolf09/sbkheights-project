@@ -13,6 +13,7 @@ export default async function AboutUsPage() {
     hero: {
       badge: "The Vertical Monolith",
       title: "Architectural Authority Since 1994.",
+      image: "/images/hero.png"
     },
     intro: {
       title: "Redefining the Sky’s Limit.",
@@ -21,7 +22,7 @@ export default async function AboutUsPage() {
     },
     mission: "To architecturally inspire modern urbanity by sculpting vertical monoliths that redefine the standard of luxury. We deliver sustainable, ultra-luxury residential ecosystems that prioritize wellness, security, and unparalleled aesthetic precision. Through engineering excellence, we create eternal landmarks that stand as a testament to structural permanence.",
     vision: "To be the global gold standard in vertical luxury development, where the SBK name is synonymous with the future of urban sophistication. We envision a world where architecture and nature exist in a seamless harmony of glass and steel, inspiring future generations to look upward.",
-    portfolio: { completed: [], ongoing: [] },
+    portfolio: { completed: [], ongoing: [], image: "/images/roof_top.png" },
     visionaries: [],
     cta: { title: "", primaryBtn: "", secondaryBtn: "" }
   };
@@ -49,7 +50,7 @@ export default async function AboutUsPage() {
           <img
             alt="Corporate Headquarters"
             className="w-full h-full object-cover grayscale transition-transform duration-[3000ms] hover:scale-105"
-            src="/images/hero.png"
+            src={data.hero.image || "/images/hero.png"}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex items-end p-8 md:p-16">
             <div className="max-w-4xl">
@@ -131,7 +132,7 @@ export default async function AboutUsPage() {
       <section className="py-24 px-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <FadeIn direction="right" className="relative group overflow-hidden">
-               <img src="/images/roof_top.png" alt="Heritage" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 image-emerald aspect-square" />
+               <img src={data.portfolio?.image || "/images/roof_top.png"} alt="Heritage" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 aspect-square" />
             </FadeIn>
             <FadeIn direction="left">
               <span className="text-secondary uppercase tracking-[0.3rem] text-xs mb-8 block font-label font-bold">Portfolio of Excellence</span>

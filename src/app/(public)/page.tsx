@@ -17,6 +17,7 @@ export default async function Home() {
         "Experience a perfect harmony of comfort and architecture. Discover a residential sanctuary designed for those who value quality and community.",
       primaryBtn: "Enquire Now",
       secondaryBtn: "View Project",
+      image: "/images/hero.png"
     },
     vision: {
       title: "A New Standard of Living",
@@ -25,6 +26,8 @@ export default async function Home() {
       mission_text:
         "Strategically located in a prime area of Noida, ensuring excellent connectivity to major roads and essential services such as markets, schools, and hospitals.",
       quote: "Modern infrastructure with experienced developers.",
+      image_left: "/images/left.png",
+      image_right: "/images/right.png"
     },
     cta: {
       title: "Find Your Dream Home",
@@ -88,7 +91,7 @@ export default async function Home() {
           <img
             alt="SBK Heights"
             className="w-full h-full object-cover"
-            src="/images/hero.png"
+            src={home.hero.image || fallback.hero.image}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-transparent z-10"></div>
@@ -156,14 +159,14 @@ export default async function Home() {
           <div className="lg:col-span-12 xl:col-span-6 grid grid-cols-2 gap-4">
             <div className="pt-20">
               <img
-                src="/images/left.png"
+                src={home.vision.image_left || fallback.vision.image_left}
                 alt="Bedroom detail"
                 className="w-full h-[300px] md:h-[500px] object-cover shadow-2xl transition-all duration-1000"
               />
             </div>
             <div>
               <img
-                src="/images/right.png"
+                src={home.vision.image_right || fallback.vision.image_right}
                 alt="Living space"
                 className="w-full h-[400px] md:h-[600px] object-cover shadow-2xl transition-all duration-1000"
               />
