@@ -42,52 +42,6 @@ export async function GET() {
   }
 }
 
-// POST — upload a file
-export async function POST(req: NextRequest) {
-  const session = await getServerSession(authOptions);
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  try {
-    const formData = await req.formData();
-    const uploadedFiles = formData.getAll("files") as File[];
-
-    if (!uploadedFiles || uploadedFiles.length === 0) {
-      return NextResponse.json({ error: "No files provided" }, { status: 400 });
-    }
-
-    const uploadedOutputs: string[] = [];
-
-    for (const file of uploadedFiles) {
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-
-      const uploadPromise = new Promise<string>((resolve, reject) => {
-        const stream = cloudinary.uploader.upload_stream(
-          {
-            folder: "sbkheights",
-            resource_type: "auto",
-          },
-          (error, result) => {
-            if (error) reject(error);
-            else resolve(result!.secure_url);
-          }
-        );
-        stream.end(buffer);
-      });
-
-      const url = await uploadPromise;
-      uploadedOutputs.push(url);
-    }
-
-    return NextResponse.json({ uploaded: uploadedOutputs });
-  } catch (err: any) {
-    console.error("Cloudinary upload error:", err);
-    return NextResponse.json({ error: err.message }, { status: 500 });
-  }
-}
-
 // DELETE — remove a file
 export async function DELETE(req: NextRequest) {
   const session = await getServerSession(authOptions);

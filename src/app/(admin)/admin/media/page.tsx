@@ -62,20 +62,45 @@ export default function MediaLibraryPage() {
     if (!fileList || fileList.length === 0) return;
     setUploading(true);
 
-    const formData = new FormData();
-    Array.from(fileList).forEach((f) => formData.append("files", f));
-
     try {
-      const res = await fetch("/api/media", { method: "POST", body: formData });
-      const data = await res.json();
-      if (res.ok) {
-        showToast(`${data.uploaded.length} file(s) uploaded successfully`);
-        await fetchFiles();
-      } else {
-        showToast(data.error || "Upload failed", "error");
+      // 1. Get upload signature
+      const signRes = await fetch("/api/media/sign");
+      if (!signRes.ok) throw new Error("Failed to get upload signature");
+      
+      const { signature, timestamp, cloudName, apiKey } = await signRes.json();
+
+      let successCount = 0;
+
+      // 2. Upload files directly to Cloudinary
+      for (const file of Array.from(fileList)) {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("api_key", apiKey);
+        formData.append("timestamp", timestamp.toString());
+        formData.append("signature", signature);
+        formData.append("folder", "sbkheights");
+
+        const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/auto/upload`, {
+          method: "POST",
+          body: formData,
+        });
+
+        if (uploadRes.ok) {
+          successCount++;
+        } else {
+          const errData = await uploadRes.json();
+          console.error("Upload error:", errData);
+          showToast(`Failed to upload ${file.name}`, "error");
+        }
       }
-    } catch {
-      showToast("Upload failed", "error");
+
+      if (successCount > 0) {
+        showToast(`${successCount} file(s) uploaded successfully`);
+        await fetchFiles();
+      }
+    } catch (err: any) {
+      console.error(err);
+      showToast(err.message || "Upload failed", "error");
     } finally {
       setUploading(false);
     }
