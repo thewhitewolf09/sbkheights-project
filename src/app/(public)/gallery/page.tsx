@@ -29,18 +29,8 @@ export default async function GalleryPage() {
     cinema: {
       badge: cmsData?.cinema?.badge || "Cinematic Experience",
       title: cmsData?.cinema?.title || "The Heights in Motion",
-      main: { 
-        title: cmsData?.cinema?.main?.title || "Official Drone Walkthrough 2024", 
-        meta: cmsData?.cinema?.main?.meta || "4:32 MIN • 4K ULTRA HD", 
-        url: "/images/gall_1.png" 
-      },
-      items: cmsData?.cinema?.items?.length > 0 ? cmsData.cinema.items : [
-        { 
-          title: "Interior Tour", 
-          meta: "2:15 MIN • HD", 
-          url: "/images/gall_3.png" 
-        }
-      ]
+      main: cmsData?.cinema?.main || null,
+      items: cmsData?.cinema?.items || []
     }
   };
 
