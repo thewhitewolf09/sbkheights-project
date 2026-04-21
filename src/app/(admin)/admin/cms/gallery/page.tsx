@@ -35,11 +35,8 @@ export default function GalleryCMSEditor() {
     cinema: {
       badge: "Cinematic Experience",
       title: "The Heights in Motion",
-      main: { title: "Official Drone Walkthrough 2024", meta: "4:32 MIN • 4K ULTRA HD", url: "/images/gall_1.png" },
-      items: [
-        { title: "Interior Tour", meta: "2:15 MIN • HD", url: "/images/gall_3.png" },
-        { title: "Amenities Showcase", meta: "3:45 MIN • 4K", url: "/images/gall_7.png" }
-      ]
+      main: null,
+      items: []
     }
   });
 

@@ -15,7 +15,7 @@ const getThumbnail = (url: string) => {
   if (ytId) {
     return `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
   }
-  return url || "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80";
+  return url || "";
 };
 
 export default function CinemaSection({ data }: { data: any }) {
@@ -49,7 +49,7 @@ export default function CinemaSection({ data }: { data: any }) {
             <img
               alt="Featured Cinema"
               className="w-full h-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 scale-105 group-hover:scale-100 opacity-60"
-              src={activeVideo.url || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80"}
+              src={activeVideo.url || ""}
             />
           </>
         )}
