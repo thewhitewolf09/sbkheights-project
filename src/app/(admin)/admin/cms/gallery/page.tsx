@@ -228,9 +228,17 @@ export default function GalleryCMSEditor() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8">
-              <FadeIn className="bg-primary p-8 text-white relative flex gap-8">
+              {content.cinema.main ? (
+                <FadeIn className="bg-primary p-8 text-white relative flex gap-8">
                 <div className="flex-1 space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-4 text-secondary">A. Main Featured Video</h4>
+                  <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-secondary">Main Featured Video</h4>
+                    <button 
+                      onClick={() => setContent({ ...content, cinema: { ...content.cinema, main: null } })}
+                      className="w-6 h-6 bg-white/10 text-white rounded-full hover:bg-red-500 transition-colors flex items-center justify-center text-xs font-bold"
+                      title="Remove Main Video"
+                    >✕</button>
+                  </div>
                   <div className="space-y-2">
                     <label className="text-[8px] font-bold uppercase text-white/40 tracking-widest">Video Title</label>
                     <input 
@@ -270,12 +278,23 @@ export default function GalleryCMSEditor() {
                    </div>
                 </div>
               </FadeIn>
+              ) : (
+                <div className="h-full border-2 border-dashed border-outline-variant/30 flex items-center justify-center p-12">
+                  <button 
+                    onClick={() => setContent({ ...content, cinema: { ...content.cinema, main: { title: "New Featured Video", meta: "Duration • Quality", url: "" } } })}
+                    className="flex flex-col items-center gap-4 text-on-surface-variant hover:text-primary transition-colors"
+                  >
+                    <span className="material-symbols-outlined text-4xl">video_call</span>
+                    <span className="text-xs font-bold uppercase tracking-widest">Set Main Featured Video</span>
+                  </button>
+                </div>
+              )}
             </div>
 
             
             <div className="lg:col-span-4 space-y-6">
               <div className="flex justify-between items-center border-b border-outline-variant/20 pb-2">
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary px-2">B. Feature Clips</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary px-2">Video Library</h4>
                 <button 
                   onClick={() => {
                     const newItems = [...(content.cinema.items || []), { title: "New Clip", meta: "MIN • HD", url: "/images/placeholder.png" }];

@@ -19,11 +19,13 @@ const getThumbnail = (url: string) => {
 };
 
 export default function CinemaSection({ data }: { data: any }) {
-  const [activeVideo, setActiveVideo] = useState(data.main);
+  const [activeVideo, setActiveVideo] = useState(data.main || (data.items && data.items.length > 0 ? data.items[0] : null));
 
   // If the user hasn't interacted, maybe we want to autoplay? No, auto play requires mute.
   // We'll just render iframe or img.
   
+  if (!activeVideo) return <div className="text-white/50 p-12 text-center font-label uppercase tracking-widest border border-white/5 bg-white/5">No Cinematic Content Available</div>;
+
   const activeYtId = getYoutubeId(activeVideo.url);
 
   return (
@@ -61,7 +63,7 @@ export default function CinemaSection({ data }: { data: any }) {
       </FadeIn>
 
       <StaggerContainer className="flex flex-col justify-center space-y-8">
-        {[data.main, ...(data.items || [])].map((v: any, i: number) => {
+        {[data.main, ...(data.items || [])].filter(Boolean).map((v: any, i: number) => {
           const isSelected = activeVideo.url === v.url && activeVideo.title === v.title;
           
           return (
