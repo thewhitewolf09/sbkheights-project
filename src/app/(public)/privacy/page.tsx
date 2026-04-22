@@ -43,9 +43,9 @@ export default async function LegalPage() {
               </nav>
               <div className="bg-primary p-8 shadow-2xl relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
-                <h4 className="font-headline text-lg font-bold mb-4 uppercase tracking-tighter text-secondary">Governance</h4>
-                <p className="text-[10px] text-white/40 mb-8 leading-relaxed font-label uppercase tracking-widest font-bold">Our legal team is available to clarify any aspects of our service agreements.</p>
-                <a className="text-white text-[10px] font-bold border-b border-secondary/40 pb-1 inline-block uppercase tracking-widest hover:text-secondary transition-colors" href="mailto:legal@sbkheights.com">legal@sbkheights.com</a>
+                <h4 className="font-headline text-lg font-bold mb-4 uppercase tracking-tighter text-secondary">{data.governance?.title || "Governance"}</h4>
+                <p className="text-[10px] text-white/40 mb-8 leading-relaxed font-label uppercase tracking-widest font-bold">{data.governance?.content || "Our legal team is available to clarify any aspects of our service agreements."}</p>
+                <a className="text-white text-[10px] font-bold border-b border-secondary/40 pb-1 inline-block uppercase tracking-widest hover:text-secondary transition-colors" href={`mailto:${data.governance?.email || "legal@sbkheights.com"}`}>{data.governance?.email || "legal@sbkheights.com"}</a>
               </div>
             </div>
           </aside>
