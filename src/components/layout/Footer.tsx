@@ -51,7 +51,7 @@ export default async function Footer() {
         <div className="flex flex-col md:items-end">
           <h4 className="text-white text-base font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Get In Touch</h4>
           <div className="space-y-6 text-left md:text-right">
-            <p className="text-secondary font-label text-3xl font-bold tracking-tight">{data.details.phone}</p>
+            <p className="text-secondary font-label text-3xl font-medium tracking-tight">{data.details.phone}</p>
             <p className="text-white/50 font-body text-base lowercase tracking-widest">{data.details.email}</p>
           </div>
           

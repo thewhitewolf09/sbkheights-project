@@ -152,7 +152,7 @@ export default function ContactUsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-12 border-b border-white/5">
                        <div>
                          <p className="font-label text-secondary text-sm uppercase tracking-widest mb-2 font-black">Direct Line</p>
-                         <p className="text-3xl font-headline font-bold text-white">{data.details.phone}</p>
+                         <p className="text-3xl font-label font-semibold text-white">{data.details.phone}</p>
                        </div>
                        <div className="flex flex-col justify-between h-full">
                          <div>
