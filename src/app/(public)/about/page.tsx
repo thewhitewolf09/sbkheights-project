@@ -55,13 +55,19 @@ export default async function AboutUsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex items-end p-8 md:p-16">
             <div className="max-w-4xl">
               <FadeIn delay={0.2} direction="right">
-                <span className="text-secondary uppercase tracking-[0.4rem] text-sm mb-6 block font-label font-bold">
-                  {data.hero.badge}
-                </span>
+                <div className="inline-block px-4 py-2 border border-[#f5c518]/30 bg-[#f5c518]/10 backdrop-blur-md mb-8 rounded-sm">
+                  <span className="text-[#f5c518] uppercase tracking-[0.5rem] text-xs block font-label font-black">
+                    {data.hero.badge}
+                  </span>
+                </div>
               </FadeIn>
               <FadeIn delay={0.4}>
                 <h1 className="text-white text-4xl md:text-6xl lg:text-7xl font-headline mb-8 leading-tight tracking-tighter">
-                  {data.hero.title}
+                  {data.hero.title.split(/(\d{4})/).map((part: string, i: number) => 
+                    part === "1994" ? (
+                      <span key={i} className="text-[#f5c518] font-bold">{part}</span>
+                    ) : part
+                  )}
                 </h1>
               </FadeIn>
             </div>
@@ -85,17 +91,21 @@ export default async function AboutUsPage() {
             </div>
           </FadeIn>
           <div className="md:col-span-12 xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
-             <FadeIn delay={0.2} className="bg-surface-container-low p-12 flex flex-col justify-between group hover:bg-primary transition-colors duration-700">
-                <span className="text-secondary font-label uppercase tracking-widest text-sm font-black mb-12 group-hover:text-secondary-container">The Ambition</span>
-                <h3 className="text-3xl font-headline text-primary group-hover:text-white uppercase tracking-tighter mb-6">Mission</h3>
-                <p className="text-on-surface-variant group-hover:text-white/70 text-base leading-loose">
+             <FadeIn delay={0.2} className="bg-[#f0f4f0] p-10 md:p-12 flex flex-col border border-[#114c2e]/20 shadow-sm rounded-sm hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group space-y-8">
+                <div>
+                  <span className="text-[#f5c518] !text-[#f5c518] font-label uppercase tracking-[0.3em] text-xs font-black mb-6 block">The Ambition</span>
+                  <h3 className="text-3xl md:text-4xl font-headline text-primary uppercase tracking-tighter mb-0 font-bold">Mission</h3>
+                </div>
+                <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed font-body text-left">
                   {data.mission}
                 </p>
              </FadeIn>
-             <FadeIn delay={0.4} className="bg-primary p-12 flex flex-col justify-between group hover:bg-surface-container-low transition-colors duration-700">
-                <span className="text-secondary-container font-label uppercase tracking-widest text-sm font-black mb-12 group-hover:text-secondary">The Future</span>
-                <h3 className="text-3xl font-headline text-white group-hover:text-primary uppercase tracking-tighter mb-6">Vision</h3>
-                <p className="text-white/70 group-hover:text-on-surface-variant text-base leading-loose">
+             <FadeIn delay={0.4} className="bg-primary p-10 md:p-12 flex flex-col border border-white/10 shadow-xl rounded-sm hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group space-y-8">
+                <div>
+                  <span className="text-[#f5c518] !text-[#f5c518] font-label uppercase tracking-[0.3em] text-xs font-black mb-6 block">The Future</span>
+                  <h3 className="text-3xl md:text-4xl font-headline text-white uppercase tracking-tighter mb-0 font-bold">Vision</h3>
+                </div>
+                <p className="text-white/80 text-lg md:text-xl leading-relaxed font-body text-left">
                   {data.vision}
                 </p>
              </FadeIn>
