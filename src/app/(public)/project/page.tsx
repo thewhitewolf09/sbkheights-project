@@ -127,19 +127,28 @@ export default async function TheProjectPage() {
                  </div>
                  <div className="lg:col-span-12 xl:col-span-5 space-y-10">
                     <div>
-                       <span className="text-secondary font-label text-xs uppercase tracking-[0.3rem] font-bold mb-4 block">
-                          {data.units_meta?.title || "Unit Configuration"}
+                       <span className="text-secondary font-label uppercase tracking-[0.34rem] text-sm mb-6 block font-bold">
+                          {data.property_intro_meta?.title || "Property Introduction"}
                        </span>
-                       <h3 className="text-primary text-4xl md:text-5xl font-headline font-bold uppercase tracking-tighter">{unit.type}</h3>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-outline-variant/10 pt-10">
-                       {(unit.specs || []).map((spec: any, j: number) => (
-                         <div key={j} className="group">
-                            <p className="text-xs uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1 group-hover:text-secondary transition-colors">{spec.label}</p>
-                            <p className="text-lg font-headline text-primary font-bold">{spec.val}</p>
-                         </div>
-                       ))}
+                       <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary italic uppercase tracking-tighter mb-8">
+                          Standardized Excellence.
+                       </h2>
+                       <div className="space-y-6">
+                          <p className="text-on-surface-variant text-lg leading-relaxed font-body">
+                             {data.property_intro_p1}
+                          </p>
+                          <p className="text-on-surface-variant text-lg leading-relaxed font-body border-l-2 border-secondary/20 pl-8 py-2">
+                             {data.property_intro_p2}
+                          </p>
+                       </div>
+                       <div className="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-outline-variant/10 pt-10">
+                          {(unit.specs || []).map((spec: any, j: number) => (
+                            <div key={j} className="group">
+                               <p className="text-sm uppercase tracking-widest text-on-surface-variant/60 font-bold mb-1 group-hover:text-secondary transition-colors">{spec.label}</p>
+                               <p className="text-xl font-headline text-primary font-bold">{spec.val}</p>
+                            </div>
+                          ))}
+                       </div>
                     </div>
                  </div>
               </FadeIn>
@@ -152,17 +161,17 @@ export default async function TheProjectPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
              <FadeIn>
-                <span className="text-secondary font-label text-xs uppercase tracking-[0.3rem] font-bold mb-6 block text-center lg:text-left">Elite Facilities</span>
+                <span className="text-secondary font-label text-sm uppercase tracking-[0.3rem] font-bold mb-6 block text-center lg:text-left">Elite Facilities</span>
                 <h2 className="text-white text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter text-center lg:text-left">{data.facilities_meta.title}</h2>
-                <p className="text-white/60 text-lg font-body mt-8 leading-relaxed max-w-xl text-center lg:text-left">{data.facilities_meta.subtitle}</p>
+                <p className="text-white/60 text-xl font-body mt-8 leading-relaxed max-w-xl text-center lg:text-left">{data.facilities_meta.subtitle}</p>
              </FadeIn>
              
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {(data.facilities || []).map((f: any, i: number) => (
                   <FadeIn key={i} delay={i * 0.1} className="bg-white/5 border border-white/5 p-8 hover:bg-white transition-all group duration-700 shadow-xl">
                      <span className="material-symbols-outlined text-secondary text-4xl mb-6 group-hover:text-primary transition-colors">{f.icon}</span>
-                     <h4 className="text-white group-hover:text-primary text-xl font-headline font-bold uppercase tracking-tighter mb-2">{f.name}</h4>
-                     <p className="text-white/60 group-hover:text-primary/60 text-sm font-body font-light leading-relaxed">{f.desc}</p>
+                     <h4 className="text-white group-hover:text-primary text-2xl font-headline font-bold uppercase tracking-tighter mb-2">{f.name}</h4>
+                     <p className="text-white/60 group-hover:text-primary/60 text-base font-body font-light leading-relaxed">{f.desc}</p>
                   </FadeIn>
                 ))}
              </div>
@@ -174,16 +183,20 @@ export default async function TheProjectPage() {
          <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                <FadeIn>
-                  <span className="text-secondary font-label text-xs uppercase tracking-widest font-bold mb-4 block">Verified & Secured</span>
-                  <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">{data.legal_meta.title}</h2>
-                  <p className="text-on-surface-variant text-lg font-body mt-8 leading-relaxed">{data.legal_meta.subtitle}</p>
+                  <span className="text-secondary font-label uppercase tracking-[0.3rem] text-sm mb-4 block font-bold">The Monument</span>
+                  <h1 className="text-5xl md:text-7xl font-headline font-bold text-primary uppercase tracking-tighter leading-none mb-8">
+                    Emerald Horizon
+                  </h1>
+                  <p className="text-on-surface-variant text-xl leading-relaxed max-w-2xl font-body">
+                    {data.hero_intro}
+                  </p>
                </FadeIn>
                
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {(data.legal || []).map((doc: string, i: number) => (
                     <FadeIn key={i} delay={i * 0.1} className="flex items-center gap-4 p-6 bg-white border border-outline-variant/10 shadow-sm hover:border-secondary transition-all">
                        <span className="material-symbols-outlined text-secondary text-2xl">verified</span>
-                       <span className="text-primary font-label text-sm uppercase tracking-widest font-bold">{doc}</span>
+                       <span className="text-primary font-label text-base uppercase tracking-widest font-bold">{doc}</span>
                     </FadeIn>
                   ))}
                </div>

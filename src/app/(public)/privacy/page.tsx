@@ -59,19 +59,24 @@ export default async function LegalPage() {
           <article className="lg:col-span-9 space-y-32">
             <section id="privacy" className="scroll-mt-40">
               <div className="flex items-end gap-4 mb-16">
-                <span className="text-6xl font-headline font-bold text-secondary leading-none opacity-20">01</span>
-                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter">Privacy Policy</h2>
+                <span className="text-secondary font-label uppercase tracking-[0.3rem] text-base mb-4 block font-bold">Document Integrity</span>
               </div>
+              <h1 className="text-5xl md:text-7xl font-headline font-bold text-primary uppercase tracking-tighter leading-none mb-8">
+                Privacy & Safeguards.
+              </h1>
+              <p className="text-on-surface-variant text-xl leading-relaxed max-w-2xl font-body mb-16">
+                {data.hero_intro || "Your data security and site experience are our highest priorities. Review our comprehensive privacy safeguards."}
+              </p>
               
               <div className="space-y-20">
                 {privacySections.map((section: any, idx: number) => (
                   <FadeIn key={idx} className="space-y-6">
-                    <h3 className="text-sm font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
+                    <h3 className="text-base font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
                       <span className="w-8 h-[1px] bg-secondary/30"></span>
                       {section.title}
                     </h3>
                     <div className="prose prose-slate max-w-none">
-                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
+                      <p className="text-on-surface-variant text-xl leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
                     </div>
                   </FadeIn>
                 ))}
@@ -84,20 +89,19 @@ export default async function LegalPage() {
             </FadeIn>
 
             <section id="terms" className="scroll-mt-40">
-              <div className="flex items-end gap-4 mb-16">
-                <span className="text-6xl font-headline font-bold text-secondary leading-none opacity-20">02</span>
-                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter">Usage Framework</h2>
-              </div>
+              <div className="h-px bg-outline-variant/10 mb-20" id="terms"></div>
+              <span className="text-secondary font-label uppercase tracking-widest text-base font-bold mb-4 block">System Terms</span>
+              <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter mb-12">Terms of Service.</h2>
               
               <div className="space-y-20">
                 {termsSections.map((section: any, idx: number) => (
                   <FadeIn key={idx} className="space-y-6">
-                    <h3 className="text-sm font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
+                    <h3 className="text-base font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
                       <span className="w-8 h-[1px] bg-secondary/30"></span>
                       {section.title}
                     </h3>
                     <div className="prose prose-slate max-w-none">
-                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
+                      <p className="text-on-surface-variant text-xl leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
                     </div>
                   </FadeIn>
                 ))}

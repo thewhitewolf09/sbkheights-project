@@ -55,7 +55,7 @@ export default async function AboutUsPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent flex items-end p-8 md:p-16">
             <div className="max-w-4xl">
               <FadeIn delay={0.2} direction="right">
-                <span className="text-secondary uppercase tracking-[0.4rem] text-xs mb-6 block font-label font-bold">
+                <span className="text-secondary uppercase tracking-[0.4rem] text-sm mb-6 block font-label font-bold">
                   {data.hero.badge}
                 </span>
               </FadeIn>
@@ -76,26 +76,26 @@ export default async function AboutUsPage() {
               {data.intro.title}
             </h2>
             <div className="space-y-8">
-               <p className="text-on-surface-variant text-lg leading-relaxed font-body">
+               <p className="text-on-surface-variant text-xl leading-relaxed font-body">
                  {data.intro.paragraph1}
                </p>
-               <p className="text-on-surface-variant text-lg leading-relaxed font-body border-l-2 border-secondary/20 pl-6">
+               <p className="text-on-surface-variant text-xl leading-relaxed font-body border-l-2 border-secondary/20 pl-6">
                  {data.intro.paragraph2}
                </p>
             </div>
           </FadeIn>
           <div className="md:col-span-12 xl:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-12">
              <FadeIn delay={0.2} className="bg-surface-container-low p-12 flex flex-col justify-between group hover:bg-primary transition-colors duration-700">
-                <span className="text-secondary font-label uppercase tracking-widest text-xs font-black mb-12 group-hover:text-secondary-container">The Ambition</span>
+                <span className="text-secondary font-label uppercase tracking-widest text-sm font-black mb-12 group-hover:text-secondary-container">The Ambition</span>
                 <h3 className="text-3xl font-headline text-primary group-hover:text-white uppercase tracking-tighter mb-6">Mission</h3>
-                <p className="text-on-surface-variant group-hover:text-white/60 text-sm leading-loose">
+                <p className="text-on-surface-variant group-hover:text-white/70 text-base leading-loose">
                   {data.mission}
                 </p>
              </FadeIn>
              <FadeIn delay={0.4} className="bg-primary p-12 flex flex-col justify-between group hover:bg-surface-container-low transition-colors duration-700">
-                <span className="text-secondary-container font-label uppercase tracking-widest text-xs font-black mb-12 group-hover:text-secondary">The Future</span>
+                <span className="text-secondary-container font-label uppercase tracking-widest text-sm font-black mb-12 group-hover:text-secondary">The Future</span>
                 <h3 className="text-3xl font-headline text-white group-hover:text-primary uppercase tracking-tighter mb-6">Vision</h3>
-                <p className="text-white/60 group-hover:text-on-surface-variant text-sm leading-loose">
+                <p className="text-white/70 group-hover:text-on-surface-variant text-base leading-loose">
                   {data.vision}
                 </p>
              </FadeIn>
@@ -106,9 +106,9 @@ export default async function AboutUsPage() {
       <section className="py-24 bg-white px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-12">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">Our Foundation</span>
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-sm mb-4 block font-bold">Our Foundation</span>
             <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">Core Values</h2>
-            <p className="text-on-surface-variant/60 text-xs uppercase tracking-widest font-black mt-4 border-t border-outline-variant/10 pt-4 inline-block">THE STRUCTURAL PILLARS OF SBK HEIGHTS</p>
+            <p className="text-on-surface-variant/80 text-sm uppercase tracking-widest font-black mt-4 border-t border-outline-variant/10 pt-4 inline-block">THE STRUCTURAL PILLARS OF SBK HEIGHTS</p>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20">
@@ -120,7 +120,7 @@ export default async function AboutUsPage() {
                 <h3 className="text-2xl font-headline text-primary mb-6 group-hover:text-primary uppercase tracking-tighter font-bold">
                   {v.title}
                 </h3>
-                <p className="text-on-surface-variant group-hover:text-primary/70 text-sm leading-relaxed transition-colors">
+                <p className="text-on-surface-variant group-hover:text-primary/80 text-base leading-relaxed transition-colors">
                   {v.text}
                 </p>
               </StaggerItem>
@@ -135,12 +135,12 @@ export default async function AboutUsPage() {
                <img src={data.portfolio?.image || "/images/roof_top.png"} alt="Heritage" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 aspect-square" />
             </FadeIn>
             <FadeIn direction="left">
-              <span className="text-secondary uppercase tracking-[0.3rem] text-xs mb-8 block font-label font-bold">Portfolio of Excellence</span>
+              <span className="text-secondary uppercase tracking-[0.3rem] text-sm mb-8 block font-label font-bold">Portfolio of Excellence</span>
               <h2 className="text-primary text-5xl font-headline mb-12 uppercase tracking-tighter">Demonstrated Expertise.</h2>
               
               <div className="space-y-12">
                 <div>
-                  <h3 className="text-secondary font-label text-xs uppercase tracking-widest font-black mb-6">Completed Landmarks</h3>
+                  <h3 className="text-secondary font-label text-sm uppercase tracking-widest font-black mb-6">Completed Landmarks</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {(data.portfolio?.completed && data.portfolio.completed.length > 0 ? data.portfolio.completed : [
                       { n: "Chambal River Front", loc: "Kota, Rajasthan", val: "₹7 Cr" },
@@ -157,7 +157,7 @@ export default async function AboutUsPage() {
                 </div>
 
                 <div>
-                  <h3 className="text-secondary font-label text-xs uppercase tracking-widest font-black mb-6">Ongoing Developments</h3>
+                  <h3 className="text-secondary font-label text-sm uppercase tracking-widest font-black mb-6">Ongoing Developments</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {(data.portfolio?.ongoing && data.portfolio.ongoing.length > 0 ? data.portfolio.ongoing : [
                       { n: "Solid Pink Stone Gate", loc: "District Gonda", val: "₹35 Cr" },
@@ -180,7 +180,7 @@ export default async function AboutUsPage() {
       <section className="py-24 px-12 bg-surface border-t border-outline-variant/10">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-16">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">Our Leadership</span>
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-sm mb-4 block font-bold">Our Leadership</span>
             <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">The Visionaries.</h2>
           </FadeIn>
 
@@ -191,10 +191,10 @@ export default async function AboutUsPage() {
             ]).map((v: any, i: number) => (
               <FadeIn key={i} delay={0.2 * (i + 1)} className="group">
                 <div className={`${i === 1 ? 'bg-primary border-white/5' : 'bg-primary/5 border-outline-variant/10'} p-12 border group-hover:border-secondary transition-all h-full`}>
-                  <span className="text-secondary font-label uppercase tracking-widest text-xs font-black mb-6 block">{v.type}</span>
+                  <span className="text-secondary font-label uppercase tracking-widest text-sm font-black mb-6 block">{v.type}</span>
                   <h3 className={`text-4xl md:text-5xl font-headline mb-2 uppercase tracking-tighter ${i === 1 ? 'text-white' : 'text-primary'}`}>{v.name}</h3>
-                  <p className={`font-body text-sm uppercase tracking-[0.2rem] mb-8 ${i === 1 ? 'text-white/40' : 'text-primary/60'}`}>{v.role}</p>
-                  <p className={`leading-relaxed font-light ${i === 1 ? 'text-white/60' : 'text-on-surface-variant'}`}>
+                  <p className={`font-body text-base uppercase tracking-[0.2rem] mb-8 ${i === 1 ? 'text-white/60' : 'text-primary/70'}`}>{v.role}</p>
+                  <p className={`leading-relaxed font-light text-base ${i === 1 ? 'text-white/80' : 'text-on-surface-variant'}`}>
                     {v.bio}
                   </p>
                 </div>

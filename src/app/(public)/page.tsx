@@ -98,7 +98,7 @@ export default async function Home() {
         <div className="relative z-20 px-6 md:px-12 pt-24 md:pt-32 max-w-7xl mx-auto w-full">
           <div className="max-w-4xl">
             <FadeIn delay={0.2}>
-              <span className="block text-secondary uppercase tracking-[0.4rem] font-label font-black mb-6 text-sm">
+              <span className="block text-secondary uppercase tracking-[0.4rem] font-label font-black mb-6 text-base">
                 {home.hero.badge}
               </span>
             </FadeIn>
@@ -108,7 +108,7 @@ export default async function Home() {
               </h1>
             </FadeIn>
             <FadeIn delay={0.6}>
-              <p className="text-white/70 text-lg md:text-xl max-w-2xl font-body mb-12 leading-relaxed tracking-wide">
+              <p className="text-white/80 text-xl md:text-2xl max-w-2xl font-body mb-12 leading-relaxed tracking-wide">
                 {home.hero.subtitle}
               </p>
             </FadeIn>
@@ -118,7 +118,7 @@ export default async function Home() {
                   href="/contact"
                   className="bg-secondary hover:bg-secondary-container text-primary px-10 py-5 font-label font-black uppercase tracking-widest text-xs transition-all duration-500 flex items-center justify-center shadow-xl"
                 >
-                  {home.hero.primaryBtn}
+                  <span className="text-sm">{home.hero.primaryBtn}</span>
                 </Link>
                 <Link
                   href="/project"
@@ -141,17 +141,17 @@ export default async function Home() {
               </h2>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <p className="text-on-surface-variant text-lg leading-relaxed mb-8 font-body">
+              <p className="text-on-surface-variant text-xl leading-relaxed mb-8 font-body">
                 {home.vision.about_text}
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
-              <p className="text-primary text-xl font-headline font-bold leading-relaxed italic border-l-4 border-secondary pl-8 py-2 mb-10">
+              <p className="text-primary text-2xl font-headline font-bold leading-relaxed italic border-l-4 border-secondary pl-8 py-2 mb-10">
                 {home.vision.mission_text}
               </p>
             </FadeIn>
             <FadeIn delay={0.5}>
-              <p className="text-on-surface-variant/60 text-xs font-label uppercase tracking-widest font-bold">
+              <p className="text-on-surface-variant/70 text-sm font-label uppercase tracking-widest font-bold">
                 — {home.vision.quote}
               </p>
             </FadeIn>
@@ -178,13 +178,13 @@ export default async function Home() {
       <section className="py-32 bg-primary text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <FadeIn className="mb-20">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-sm mb-4 block font-bold">
               {excellenceTitle}
             </span>
             <h2 className="text-4xl md:text-6xl font-headline font-bold mb-6 uppercase tracking-tighter">
               {excellenceTitle}
             </h2>
-            <p className="text-white/60 text-sm font-label uppercase tracking-widest border-t border-white/10 pt-4 inline-block">
+            <p className="text-white/70 text-base font-label uppercase tracking-widest border-t border-white/10 pt-4 inline-block">
               {excellenceSubtitle}
             </p>
           </FadeIn>
@@ -198,7 +198,7 @@ export default async function Home() {
                   <h3 className="text-xl font-headline font-bold mb-4 group-hover:text-primary uppercase tracking-tighter italic">
                     {feature.title}
                   </h3>
-                  <p className="text-white/60 group-hover:text-primary/70 font-body text-sm leading-relaxed transition-colors">
+                  <p className="text-white/70 group-hover:text-primary/70 font-body text-base leading-relaxed transition-colors">
                     {feature.desc}
                   </p>
                 </div>
@@ -223,7 +223,7 @@ export default async function Home() {
                   <p className="text-primary text-5xl font-headline font-bold mb-2 group-hover:text-secondary transition-colors">
                     {stat.val}
                   </p>
-                  <p className="text-xs uppercase tracking-[0.4rem] font-black text-on-surface-variant/60">
+                  <p className="text-sm uppercase tracking-[0.4rem] font-black text-on-surface-variant/70">
                     {stat.label}
                   </p>
                 </div>

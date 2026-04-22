@@ -6,11 +6,11 @@ export default function OurTeamPage() {
     <>
       <section className="py-32 px-12 md:px-24 grid md:grid-cols-2 gap-20 items-center border-b border-outline-variant/30">
         <FadeIn direction="right">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary mb-8 leading-tight">
             LEADERSHIP <br />
             <span className="text-secondary">EXCELLENCE</span>
           </h2>
-          <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-8 max-w-xl">
+          <p className="text-xl text-on-surface-variant font-body leading-relaxed mb-8 max-w-xl">
             Our leadership team comprises visionaries who have redefined the
             skyline for over three decades. At SBK Heights, we don't just build
             structures; we curate lifestyles characterized by architectural
@@ -21,15 +21,15 @@ export default function OurTeamPage() {
               <span className="block text-3xl font-bold text-primary mb-2">
                 30+
               </span>
-              <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant">
+              <span className="font-label text-base uppercase tracking-widest text-on-surface-variant">
                 Years of Heritage
               </span>
             </div>
             <div>
-              <span className="block text-3xl font-bold text-primary mb-2">
+              <span className="block text-4xl font-bold text-primary mb-2">
                 150+
               </span>
-              <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant">
+              <span className="font-label text-base uppercase tracking-widest text-on-surface-variant">
                 Global Awards
               </span>
             </div>
@@ -53,15 +53,15 @@ export default function OurTeamPage() {
       <section className="py-32 px-12 md:px-24">
         <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div className="max-w-2xl">
-            <span className="font-label text-secondary uppercase tracking-[0.2em] text-sm mb-4 block">
+            <span className="font-label text-secondary uppercase tracking-[0.2em] text-base mb-4 block">
               The Visionaries
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-headline font-bold text-primary tracking-tight">
               MEET THE TEAM
             </h2>
           </div>
           <div className="flex gap-4">
-            <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant self-center">
+            <span className="font-label text-base uppercase tracking-widest text-on-surface-variant self-center">
               Filter by Expertise
             </span>
             <div className="w-12 h-[1px] bg-outline-variant self-center"></div>
@@ -78,13 +78,13 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-base mb-2 block">
               Founding Partner
             </span>
-            <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
+            <h3 className="text-3xl font-headline font-bold text-primary mb-4 tracking-tight">
               ALEXANDER S. VANCE
             </h3>
-            <p className="text-on-surface-variant font-light text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-6">
               With an eye for sustainable verticality, Alexander has pioneered
               the integration of smart-glass technology in luxury residential
               developments across the globe.
@@ -115,13 +115,13 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-base mb-2 block">
               Chief Architect
             </span>
-            <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
+            <h3 className="text-3xl font-headline font-bold text-primary mb-4 tracking-tight">
               ELENA KOURIKOVA
             </h3>
-            <p className="text-on-surface-variant font-light text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-6">
               Elena's designs are defined by their rhythmic asymmetry and
               connection to light. She believes architecture should be felt as
               much as it is seen.
@@ -158,7 +158,7 @@ export default function OurTeamPage() {
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
               MARCUS CHEN
             </h3>
-            <p className="text-on-surface-variant font-light text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-6">
               Overseeing the structural integrity of every project, Marcus
               ensures that the precision on paper translates into the permanence
               of our steel and stone.
@@ -189,13 +189,13 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-base mb-2 block">
               Design Director
             </span>
-            <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
+            <h3 className="text-3xl font-headline font-bold text-primary mb-4 tracking-tight">
               SARA J. WHITTAKER
             </h3>
-            <p className="text-on-surface-variant font-light text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-6">
               Sara specializes in bespoke interiors that balance the grandeur of
               high-ceilings with the intimacy of home, using rare materials from
               around the world.
@@ -226,13 +226,13 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-base mb-2 block">
               Director of Acquisitions
             </span>
-            <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
+            <h3 className="text-3xl font-headline font-bold text-primary mb-4 tracking-tight">
               JULIAN BLAKE
             </h3>
-            <p className="text-on-surface-variant font-light text-sm leading-relaxed mb-6">
+            <p className="text-on-surface-variant font-body text-base leading-relaxed mb-6">
               Julian identifies the world's most coveted land parcels, ensuring
               SBK Heights always occupies the most prestigious coordinates in
               the city.
@@ -262,7 +262,7 @@ export default function OurTeamPage() {
               engineering, and luxury real estate. Join a culture of
               uncompromising quality.
             </p>
-            <button className="w-full py-4 border border-secondary text-secondary-container font-label text-xs uppercase tracking-[0.2em] hover:bg-secondary hover:text-white transition-all duration-300">
+            <button className="w-full py-4 border border-secondary text-secondary-container font-label text-sm uppercase tracking-[0.2em] hover:bg-secondary hover:text-white transition-all duration-300">
               View Careers
             </button>
           </FadeIn>
@@ -270,14 +270,14 @@ export default function OurTeamPage() {
       </section>
 
       <FadeIn className="bg-primary-container py-24 px-12 text-center">
-        <h2 className="text-white text-4xl font-bold mb-8 uppercase">
+        <h2 className="text-white text-5xl md:text-7xl font-headline font-bold mb-8 uppercase tracking-tighter">
           WORK WITH THE BEST
         </h2>
-        <p className="text-on-primary-container max-w-2xl mx-auto mb-12">
+        <p className="text-on-primary-container text-xl max-w-2xl mx-auto mb-12 font-body leading-relaxed">
           Connect with our team today to discuss your vision for a life lived at
           new heights.
         </p>
-        <button className="bg-secondary text-white px-12 py-5 font-label text-sm uppercase tracking-widest hover:brightness-110 transition-all shadow-xl">
+        <button className="bg-secondary text-white px-12 py-5 font-label text-base uppercase tracking-widest hover:brightness-110 transition-all shadow-xl font-bold">
           Contact Our Executive Suite
         </button>
       </FadeIn>
