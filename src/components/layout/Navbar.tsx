@@ -106,7 +106,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="block border-b border-white/5 pb-4"
               >
-                <span className={`text-xl font-headline font-bold uppercase tracking-tighter italic ${
+                <span className={`text-xl font-headline font-bold uppercase tracking-tighter ${
                   pathname === link.href ? "text-secondary" : "text-white"
                 }`}>
                   {link.label}

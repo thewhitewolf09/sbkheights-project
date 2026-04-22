@@ -29,7 +29,7 @@ export default function SecuritySettingsPage() {
       <FadeIn>
         <div className="mb-12">
           <h1 className="text-4xl font-headline text-primary mb-2">Security Settings</h1>
-          <p className="text-on-surface-variant font-body italic">Manage your administrative access credentials.</p>
+          <p className="text-on-surface-variant font-body">Manage your administrative access credentials.</p>
         </div>
 
         <div className="bg-white p-12 border border-outline-variant/10 shadow-sm relative overflow-hidden">

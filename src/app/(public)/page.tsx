@@ -212,9 +212,9 @@ export default async function Home() {
       <section className="py-40 bg-white overflow-hidden relative">
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
           <FadeIn>
-            <h2 className="text-primary text-5xl md:text-8xl font-headline font-bold mb-10 leading-none tracking-tighter uppercase italic">
-              {home.cta.title}
-            </h2>
+              <h2 className="text-primary text-5xl md:text-8xl font-headline tracking-tighter leading-[0.85] uppercase font-bold mb-12">
+                Sculpting Structural Permanence.
+              </h2>
           </FadeIn>
           <div className="mt-20 flex flex-wrap justify-center gap-16">
             {home.cta.stats.map((stat: any, i: number) => (

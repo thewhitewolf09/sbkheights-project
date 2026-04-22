@@ -249,10 +249,10 @@ export default function ProjectCMSEditor() {
       <FadeIn>
         <div className="flex justify-between items-end mb-12 border-b border-outline-variant/10 pb-8">
           <div>
-            <h1 className="text-4xl font-headline text-primary mb-2 uppercase italic">
+            <h1 className="text-4xl font-headline text-primary mb-2 uppercase">
               Project Screen Editor
             </h1>
-            <p className="text-on-surface-variant font-body italic">
+            <p className="text-on-surface-variant font-body">
               Complete management of 'The Residency' specifications and
               amenities.
             </p>
@@ -271,7 +271,7 @@ export default function ProjectCMSEditor() {
         <div className="lg:col-span-8 space-y-12">
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -mr-16 -mt-16 group-hover:bg-secondary/10 transition-colors duration-700"></div>
-            <h3 className="text-xl font-headline text-primary mb-8 pb-4 border-b border-outline-variant/5 uppercase tracking-tighter italic">
+            <h3 className="text-xl font-headline text-primary mb-8 pb-4 border-b border-outline-variant/5 uppercase tracking-tighter">
               1. Hero & Core Specs
             </h3>
             <div className="space-y-8 relative z-10">
@@ -363,7 +363,7 @@ export default function ProjectCMSEditor() {
 
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm relative">
             <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
-              <h3 className="text-xl font-headline text-primary uppercase tracking-tighter italic">
+              <h3 className="text-xl font-headline text-primary uppercase tracking-tighter">
                 2. Unit Configuration (BHK)
               </h3>
               <button
@@ -452,7 +452,7 @@ export default function ProjectCMSEditor() {
 
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm">
             <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
-              <h3 className="text-xl font-headline text-primary uppercase tracking-tighter italic">
+              <h3 className="text-xl font-headline text-primary uppercase tracking-tighter">
                 3. Modern Amenities
               </h3>
               <button
@@ -516,7 +516,7 @@ export default function ProjectCMSEditor() {
                       newF[i].desc = e.target.value;
                       setContent({ ...content, facilities: newF });
                     }}
-                    className="w-full bg-white border border-outline-variant/10 p-4 text-[10px] font-body text-on-surface-variant outline-none focus:border-secondary italic h-20 resize-none"
+                    className="w-full bg-white border border-outline-variant/10 p-4 text-[10px] font-body text-on-surface-variant outline-none focus:border-secondary h-20 resize-none"
                   />
                 </div>
               ))}
@@ -528,7 +528,7 @@ export default function ProjectCMSEditor() {
           <FadeIn className="bg-primary p-8 text-white relative group overflow-hidden shadow-2xl">
             <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
             <div className="flex justify-between items-center mb-8 pb-2 border-b border-white/5">
-              <h3 className="text-lg font-headline uppercase tracking-tighter text-secondary italic">
+              <h3 className="text-lg font-headline uppercase tracking-tighter text-secondary">
                 4. Legal & Compliance
               </h3>
               <button
@@ -572,7 +572,7 @@ export default function ProjectCMSEditor() {
 
           <FadeIn className="bg-white p-8 border border-outline-variant/10 shadow-sm">
             <div className="flex justify-between items-center mb-8 pb-2 border-b border-outline-variant/5">
-              <h3 className="text-lg font-headline text-primary uppercase tracking-tighter italic">
+              <h3 className="text-lg font-headline text-primary uppercase tracking-tighter">
                 5. Loan Partners
               </h3>
               <button
@@ -624,7 +624,7 @@ export default function ProjectCMSEditor() {
           </FadeIn>
 
           <FadeIn className="bg-surface p-8 border border-outline-variant/10">
-            <h3 className="text-lg font-headline text-primary mb-6 pb-2 border-b border-outline-variant/5 uppercase tracking-tighter italic">
+            <h3 className="text-lg font-headline text-primary mb-6 pb-2 border-b border-outline-variant/5 uppercase tracking-tighter">
               6. Bottom CTA
             </h3>
             <div className="space-y-6">
@@ -656,7 +656,7 @@ export default function ProjectCMSEditor() {
                       cta: { ...content.cta, desc: e.target.value },
                     })
                   }
-                  className="w-full bg-white border border-outline-variant/10 p-4 text-[11px] font-body text-on-surface-variant outline-none focus:border-secondary italic h-24 resize-none leading-relaxed"
+                  className="w-full bg-white border border-outline-variant/10 p-4 text-[11px] font-body text-on-surface-variant outline-none focus:border-secondary h-24 resize-none leading-relaxed"
                 />
               </div>
             </div>

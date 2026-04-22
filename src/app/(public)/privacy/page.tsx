@@ -19,17 +19,17 @@ export default async function LegalPage() {
           <div className="inline-block bg-secondary px-4 py-1 mb-6">
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Legal Document</span>
           </div>
-          <h1 className="text-5xl md:text-9xl font-headline font-bold text-primary mb-8 leading-[0.9] tracking-tighter uppercase italic">
+          <h1 className="text-5xl md:text-9xl font-headline font-bold text-primary mb-8 leading-[0.9] tracking-tighter uppercase">
             Privacy Policy &amp; <br />
             Terms of Service
           </h1>
           <div className="flex flex-col md:flex-row md:items-center gap-6 mt-12 pt-8 border-t border-outline-variant/10">
-            <p className="text-on-surface-variant max-w-2xl text-lg font-light leading-relaxed font-body italic">
+            <p className="text-on-surface-variant max-w-2xl text-lg font-light leading-relaxed font-body">
               Our commitment to architectural transparency and digital security. These documents govern your engagement with the SBK legacy.
             </p>
             <div className="md:ml-auto text-right">
               <p className="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1">Last Updated</p>
-              <p className="text-2xl font-headline font-bold text-primary italic uppercase">{data.updated || 'April 2026'}</p>
+              <p className="text-2xl font-headline font-bold text-primary uppercase">{data.updated || 'April 2026'}</p>
             </div>
           </div>
         </FadeIn>
@@ -43,7 +43,7 @@ export default async function LegalPage() {
               </nav>
               <div className="bg-primary p-8 shadow-2xl relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
-                <h4 className="font-headline text-lg font-bold mb-4 uppercase tracking-tighter text-secondary italic">Governance</h4>
+                <h4 className="font-headline text-lg font-bold mb-4 uppercase tracking-tighter text-secondary">Governance</h4>
                 <p className="text-[10px] text-white/40 mb-8 leading-relaxed font-label uppercase tracking-widest font-bold">Our legal team is available to clarify any aspects of our service agreements.</p>
                 <a className="text-white text-[10px] font-bold border-b border-secondary/40 pb-1 inline-block uppercase tracking-widest hover:text-secondary transition-colors" href="mailto:legal@sbkheights.com">legal@sbkheights.com</a>
               </div>
@@ -53,8 +53,8 @@ export default async function LegalPage() {
           <article className="lg:col-span-9 space-y-32">
             <section id="privacy" className="scroll-mt-40">
               <div className="flex items-end gap-4 mb-16">
-                <span className="text-6xl font-headline font-bold text-secondary italic leading-none opacity-20">01</span>
-                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter italic">Privacy Policy</h2>
+                <span className="text-6xl font-headline font-bold text-secondary leading-none opacity-20">01</span>
+                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter">Privacy Policy</h2>
               </div>
               
               <div className="space-y-20">
@@ -65,7 +65,7 @@ export default async function LegalPage() {
                       {section.title}
                     </h3>
                     <div className="prose prose-slate max-w-none">
-                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap italic opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
+                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
                     </div>
                   </FadeIn>
                 ))}
@@ -79,8 +79,8 @@ export default async function LegalPage() {
 
             <section id="terms" className="scroll-mt-40">
               <div className="flex items-end gap-4 mb-16">
-                <span className="text-6xl font-headline font-bold text-secondary italic leading-none opacity-20">02</span>
-                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter italic">Usage Framework</h2>
+                <span className="text-6xl font-headline font-bold text-secondary leading-none opacity-20">02</span>
+                <h2 className="text-4xl md:text-6xl font-headline font-bold text-primary uppercase tracking-tighter">Usage Framework</h2>
               </div>
               
               <div className="space-y-20">
@@ -91,7 +91,7 @@ export default async function LegalPage() {
                       {section.title}
                     </h3>
                     <div className="prose prose-slate max-w-none">
-                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap italic opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
+                      <p className="text-on-surface-variant text-lg leading-relaxed font-body whitespace-pre-wrap opacity-80 pl-12 border-l border-outline-variant/10">{section.content}</p>
                     </div>
                   </FadeIn>
                 ))}
@@ -101,8 +101,8 @@ export default async function LegalPage() {
             <section className="bg-primary p-16 md:p-24 text-white shadow-2xl relative overflow-hidden group">
                <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
                <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full group-hover:bg-secondary/10 transition-all duration-[3s]"></div>
-               <h3 className="text-4xl font-headline mb-8 uppercase tracking-tighter italic text-secondary relative z-10">Commitment to Integrity</h3>
-               <p className="text-white/40 leading-relaxed mb-12 font-body text-xl italic relative z-10 max-w-2xl">
+               <h3 className="text-4xl font-headline mb-8 uppercase tracking-tighter text-secondary relative z-10">Commitment to Integrity</h3>
+               <p className="text-white/40 leading-relaxed mb-12 font-body text-xl relative z-10 max-w-2xl">
                  "SBK Heights is built on a foundation of trust. These legal documents ensure our client relationships remain as permanent as the structures we curate."
                </p>
                <button className="bg-secondary text-primary px-12 py-5 text-[10px] font-label font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-xl relative z-10">Download Governance Packet</button>

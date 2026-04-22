@@ -297,7 +297,7 @@ export default function AboutCMSEditor() {
                         const newV = [...content.visionaries];
                         newV[i].name = e.target.value;
                         setContent({...content, visionaries: newV});
-                      }} className={`w-full bg-transparent text-3xl font-headline outline-none italic ${i % 2 === 1 ? 'text-white' : 'text-primary'}`} />
+                      }} className={`w-full bg-transparent text-3xl font-headline outline-none ${i % 2 === 1 ? 'text-white' : 'text-primary'}`} />
                     </div>
                     <div className="space-y-1">
                       <label className={`text-[8px] uppercase tracking-tighter ${i % 2 === 1 ? 'text-white/40' : 'text-on-surface-variant/40'}`}>Role Tile</label>

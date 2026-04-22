@@ -67,7 +67,7 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
               />
               <div className="mt-8 text-center">
                 <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] mb-2 block font-bold">{selectedImage.type}</span>
-                <h3 className="text-white text-2xl font-headline font-bold uppercase tracking-tighter italic">{selectedImage.title}</h3>
+                <h3 className="text-white text-2xl font-headline font-bold uppercase tracking-tighter">{selectedImage.title}</h3>
               </div>
             </motion.div>
           </motion.div>

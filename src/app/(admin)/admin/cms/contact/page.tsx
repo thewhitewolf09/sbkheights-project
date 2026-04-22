@@ -84,15 +84,15 @@ export default function ContactUsCMSEditor() {
     setContent({ ...content, proximity: newProx });
   };
 
-  if (loading) return <div className="p-12 text-primary font-label animate-pulse italic">Connecting to Contact Channels...</div>;
+  if (loading) return <div className="p-12 text-primary font-label animate-pulse">Connecting to Contact Channels...</div>;
 
   return (
     <div className="space-y-12 pb-20">
       <FadeIn>
         <div className="flex justify-between items-end mb-12 border-b border-outline-variant/10 pb-8">
           <div>
-            <h1 className="text-4xl font-headline text-primary mb-2 uppercase italic">Contact Screen Editor</h1>
-            <p className="text-on-surface-variant font-body italic">Manage geography, connectivity, and communication channels.</p>
+            <h1 className="text-4xl font-headline text-primary mb-2 uppercase">Contact Screen Editor</h1>
+            <p className="text-on-surface-variant font-body">Manage geography, connectivity, and communication channels.</p>
           </div>
           <button 
             onClick={handleSave}
@@ -109,7 +109,7 @@ export default function ContactUsCMSEditor() {
           {/* 1. Header & Address */}
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm relative group">
             <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/5 -mr-16 -mt-16 group-hover:bg-secondary/10 transition-colors duration-700"></div>
-            <h3 className="text-xl font-headline text-primary mb-8 pb-4 border-b border-outline-variant/5 uppercase tracking-tighter italic">1. Header & Base Details</h3>
+            <h3 className="text-xl font-headline text-primary mb-8 pb-4 border-b border-outline-variant/5 uppercase tracking-tighter">1. Header & Base Details</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                <div className="space-y-6">
                   <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function ContactUsCMSEditor() {
                     type="text" 
                     value={content.details.phone} 
                     onChange={(e) => setContent({ ...content, details: { ...content.details, phone: e.target.value } })}
-                    className="w-full bg-surface p-4 text-center text-lg font-headline text-primary outline-none border border-transparent focus:border-secondary transition-all italic font-bold" 
+                    className="w-full bg-surface p-4 text-center text-lg font-headline text-primary outline-none border border-transparent focus:border-secondary transition-all font-bold" 
                   />
                </div>
                <div className="space-y-2">
@@ -157,7 +157,7 @@ export default function ContactUsCMSEditor() {
                     type="text" 
                     value={content.details.email} 
                     onChange={(e) => setContent({ ...content, details: { ...content.details, email: e.target.value } })}
-                    className="w-full bg-surface p-4 text-center text-xs font-body text-primary outline-none border border-transparent focus:border-secondary transition-all italic" 
+                    className="w-full bg-surface p-4 text-center text-xs font-body text-primary outline-none border border-transparent focus:border-secondary transition-all" 
                   />
                </div>
             </div>
@@ -166,7 +166,7 @@ export default function ContactUsCMSEditor() {
           {/* 2. Proximity Categories */}
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm">
              <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
-                <h3 className="text-xl font-headline text-primary uppercase tracking-tighter italic">2. Location Proximity</h3>
+                <h3 className="text-xl font-headline text-primary uppercase tracking-tighter">2. Location Proximity</h3>
                 <button onClick={addProximityCat} className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-4 py-2 hover:bg-secondary hover:text-primary transition-all">Add Category</button>
              </div>
              <div className="space-y-12">
@@ -184,7 +184,7 @@ export default function ContactUsCMSEditor() {
                             newP[cIdx].cat = e.target.value;
                             setContent({ ...content, proximity: newP });
                           }}
-                          className="bg-transparent text-xl font-headline font-bold text-primary italic outline-none border-b border-transparent focus:border-secondary/20 w-full max-w-md" 
+                          className="bg-transparent text-xl font-headline font-bold text-primary outline-none border-b border-transparent focus:border-secondary/20 w-full max-w-md" 
                         />
                         <button onClick={() => addProximityItem(cIdx)} className="text-[8px] font-bold uppercase tracking-widest p-2 border border-outline-variant/20 hover:bg-secondary hover:text-primary transition-all">Add Point</button>
                      </div>
@@ -215,7 +215,7 @@ export default function ContactUsCMSEditor() {
                                   newProxLocal[cIdx].items[iIdx].d = e.target.value;
                                   setContent({ ...content, proximity: newProxLocal });
                                 }}
-                                className="w-full bg-transparent text-xs text-secondary font-headline italic font-bold outline-none" 
+                                className="w-full bg-transparent text-xs text-secondary font-headline font-bold outline-none" 
                               />
                            </div>
                         ))}
@@ -230,7 +230,7 @@ export default function ContactUsCMSEditor() {
           {/* 3. Map Config */}
           <FadeIn className="bg-primary p-8 text-white relative shadow-2xl">
              <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
-             <h3 className="text-lg font-headline uppercase tracking-tighter text-secondary italic mb-8 pb-2 border-b border-white/5">3. Map Configuration</h3>
+             <h3 className="text-lg font-headline uppercase tracking-tighter text-secondary mb-8 pb-2 border-b border-white/5">3. Map Configuration</h3>
              <div className="space-y-6">
                 <div className="space-y-2">
                    <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Static Map Asset</label>
@@ -256,7 +256,7 @@ export default function ContactUsCMSEditor() {
           <FadeIn className="bg-white p-8 border border-outline-variant/10 shadow-sm relative group">
              <div className="absolute top-0 right-0 w-24 h-24 bg-secondary/5 -mr-12 -mt-12 group-hover:bg-secondary/10 transition-colors duration-700"></div>
              <div className="flex justify-between items-center mb-8 pb-2 border-b border-outline-variant/5">
-                <h3 className="text-lg font-headline text-primary uppercase tracking-tighter italic">4. Strategic Socials</h3>
+                <h3 className="text-lg font-headline text-primary uppercase tracking-tighter">4. Strategic Socials</h3>
                 <button onClick={addSocial} className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-3 py-1 hover:bg-secondary hover:text-primary transition-all">Add Platform</button>
              </div>
              <div className="space-y-6 relative z-10">
@@ -296,7 +296,7 @@ export default function ContactUsCMSEditor() {
                            newS[i].url = e.target.value;
                            setContent({ ...content, details: { ...content.details, socials: newS } });
                          }}
-                         className="w-full bg-white border border-outline-variant/5 p-3 text-[9px] font-label text-on-surface-variant outline-none focus:border-secondary italic" 
+                         className="w-full bg-white border border-outline-variant/5 p-3 text-[9px] font-label text-on-surface-variant outline-none focus:border-secondary" 
                        />
                      </div>
                   </div>

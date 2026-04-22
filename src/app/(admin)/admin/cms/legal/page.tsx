@@ -76,7 +76,7 @@ export default function LegalCMSEditor() {
     <div className="max-w-6xl mx-auto space-y-12 pb-32">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-primary/10 pb-8 gap-6">
         <div>
-          <h1 className="text-4xl font-headline font-bold text-primary italic uppercase tracking-tighter">Legal & Governance</h1>
+          <h1 className="text-4xl font-headline font-bold text-primary uppercase tracking-tighter">Legal & Governance</h1>
           <p className="text-on-surface-variant font-body text-sm mt-1">Manage Privacy Policy and Terms of Service sections for the SBK Heights platform.</p>
         </div>
         <div className="flex bg-gray-100 p-1 rounded-lg">
@@ -118,14 +118,14 @@ export default function LegalCMSEditor() {
                       type="text" 
                       value={section.title}
                       onChange={(e) => updateSection(i, "title", e.target.value)}
-                      className="w-full bg-transparent border-b border-gray-100 py-2 text-xl font-headline font-bold text-primary italic outline-none focus:border-secondary transition-all"
+                      className="w-full bg-transparent border-b border-gray-100 py-2 text-xl font-headline font-bold text-primary outline-none focus:border-secondary transition-all"
                       placeholder="Title of this clause..."
                     />
                   </div>
                   <textarea 
                     value={section.content}
                     onChange={(e) => updateSection(i, "content", e.target.value)}
-                    className="w-full bg-gray-50/50 p-6 border border-gray-100 rounded-lg font-body text-sm text-on-surface-variant leading-relaxed min-h-[150px] outline-none focus:border-secondary/30 transition-all resize-none italic"
+                    className="w-full bg-gray-50/50 p-6 border border-gray-100 rounded-lg font-body text-sm text-on-surface-variant leading-relaxed min-h-[150px] outline-none focus:border-secondary/30 transition-all resize-none"
                     placeholder="Enter the detailed legal content for this section..."
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function LegalCMSEditor() {
         <div className="lg:col-span-4 space-y-6">
           <div className="bg-primary p-8 rounded-xl text-white shadow-2xl relative overflow-hidden">
              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full -mr-16 -mt-16"></div>
-             <h3 className="text-lg font-headline font-bold text-secondary mb-6 border-b border-white/10 pb-2 italic uppercase">Metadata</h3>
+             <h3 className="text-lg font-headline font-bold text-secondary mb-6 border-b border-white/10 pb-2 uppercase">Metadata</h3>
              <div className="space-y-4">
                 <div className="space-y-2">
                    <label className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">Last Updated Display</label>
@@ -155,7 +155,7 @@ export default function LegalCMSEditor() {
                       className="w-full bg-white/5 border border-white/10 p-4 text-[11px] font-label text-secondary uppercase tracking-[0.2em] rounded-lg outline-none focus:border-secondary transition-all"
                    />
                 </div>
-                <p className="text-[10px] text-white/30 italic leading-relaxed">
+                <p className="text-[10px] text-white/30 leading-relaxed">
                    Changes to legal sections take effect immediately upon publication. Ensure all structural wording is verified.
                 </p>
              </div>

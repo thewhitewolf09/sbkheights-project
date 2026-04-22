@@ -92,8 +92,8 @@ export default function EnquiryManagementPage() {
     <div className="space-y-12 pb-20 max-w-7xl mx-auto px-4 md:px-8">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-primary/10 pb-8 gap-6">
         <div>
-          <h1 className="text-4xl font-headline text-primary mb-2 uppercase italic font-bold leading-none tracking-tighter">Communication Log</h1>
-          <p className="text-on-surface-variant font-body italic text-sm">Monitor and manage all incoming leads and enquiries for SBK Heights.</p>
+          <h1 className="text-4xl font-headline text-primary mb-2 uppercase font-bold leading-none tracking-tighter">Communication Log</h1>
+          <p className="text-on-surface-variant font-body text-sm">Monitor and manage all incoming leads and enquiries for SBK Heights.</p>
         </div>
         <div className="flex w-full md:w-auto gap-4">
            <div className="flex-1 md:w-80 relative">
@@ -126,7 +126,7 @@ export default function EnquiryManagementPage() {
         
         <div className="divide-y divide-gray-100">
           {filteredEnquiries.length === 0 ? (
-            <div className="p-24 text-center text-gray-400 font-label uppercase tracking-[0.5rem] text-[10px] italic">
+            <div className="p-24 text-center text-gray-400 font-label uppercase tracking-[0.5rem] text-[10px]">
               {searchTerm ? "No records match your search criteria." : "No communication records found."}
             </div>
           ) : (
@@ -140,7 +140,7 @@ export default function EnquiryManagementPage() {
                    <p className="text-[10px] font-mono text-secondary bg-secondary/5 px-2 py-1 rounded w-fit border border-secondary/20 tracking-tight font-bold">{enquiry.phone}</p>
                 </div>
                 <div className="col-span-4 cursor-pointer" onClick={() => openModal(enquiry)}>
-                  <p className="text-[11px] text-gray-500 font-light line-clamp-3 leading-relaxed italic border-l-2 border-gray-100 pl-6 py-1">
+                  <p className="text-[11px] text-gray-500 font-light line-clamp-3 leading-relaxed border-l-2 border-gray-100 pl-6 py-1">
                     "{enquiry.message || 'The user requested a callback without a message.'}"
                   </p>
                 </div>
@@ -177,7 +177,7 @@ export default function EnquiryManagementPage() {
            <div className="bg-white w-full max-w-2xl overflow-hidden shadow-[0_0_100px_rgba(0,0,0,0.3)] rounded-2xl border border-gray-200">
               <div className="bg-primary p-8 text-white flex justify-between items-center">
                  <div>
-                    <h3 className="text-2xl font-headline uppercase italic text-secondary leading-none mb-1">{editingEnquiry ? "Modify Prospect" : "New Lead Entry"}</h3>
+                    <h3 className="text-2xl font-headline uppercase text-secondary leading-none mb-1">{editingEnquiry ? "Modify Prospect" : "New Lead Entry"}</h3>
                     <p className="text-[10px] font-label uppercase tracking-widest text-white/40 font-bold">Synchronize communication records</p>
                  </div>
                  <button onClick={() => setIsModalOpen(false)} className="w-10 h-10 flex items-center justify-center hover:bg-white/10 transition-colors rounded-full outline-none"><span className="material-symbols-outlined">close</span></button>
@@ -213,7 +213,7 @@ export default function EnquiryManagementPage() {
                       type="email" 
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full bg-gray-50 border border-gray-100 p-4 text-xs font-label outline-none focus:border-secondary focus:bg-white transition-all rounded-lg italic" 
+                      className="w-full bg-gray-50 border border-gray-100 p-4 text-xs font-label outline-none focus:border-secondary focus:bg-white transition-all rounded-lg" 
                       placeholder="prospect@example.com"
                     />
                  </div>
@@ -222,7 +222,7 @@ export default function EnquiryManagementPage() {
                     <textarea 
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-gray-50 border border-gray-100 p-6 text-xs font-body text-on-surface-variant outline-none focus:border-secondary focus:bg-white transition-all min-h-[160px] resize-none italic rounded-lg" 
+                      className="w-full bg-gray-50 border border-gray-100 p-6 text-xs font-body text-on-surface-variant outline-none focus:border-secondary focus:bg-white transition-all min-h-[160px] resize-none rounded-lg" 
                       placeholder="Add conversation notes or initial enquiry details..."
                     />
                  </div>

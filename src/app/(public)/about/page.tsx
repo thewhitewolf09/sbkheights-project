@@ -79,7 +79,7 @@ export default async function AboutUsPage() {
                <p className="text-on-surface-variant text-lg leading-relaxed font-body">
                  {data.intro.paragraph1}
                </p>
-               <p className="text-on-surface-variant text-lg leading-relaxed font-body italic border-l-2 border-secondary/20 pl-6">
+               <p className="text-on-surface-variant text-lg leading-relaxed font-body border-l-2 border-secondary/20 pl-6">
                  {data.intro.paragraph2}
                </p>
             </div>
@@ -107,7 +107,7 @@ export default async function AboutUsPage() {
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-12">
             <span className="text-secondary font-label uppercase tracking-[0.3rem] text-[10px] mb-4 block font-bold">Our Foundation</span>
-            <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] italic font-bold">Core Values</h2>
+            <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">Core Values</h2>
             <p className="text-on-surface-variant/40 text-[10px] uppercase tracking-widest font-black mt-4 border-t border-outline-variant/10 pt-4 inline-block">THE STRUCTURAL PILLARS OF SBK HEIGHTS</p>
           </FadeIn>
 
@@ -181,7 +181,7 @@ export default async function AboutUsPage() {
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-16">
             <span className="text-secondary font-label uppercase tracking-[0.3rem] text-[10px] mb-4 block font-bold">Our Leadership</span>
-            <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] italic font-bold">The Visionaries.</h2>
+            <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">The Visionaries.</h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -192,9 +192,9 @@ export default async function AboutUsPage() {
               <FadeIn key={i} delay={0.2 * (i + 1)} className="group">
                 <div className={`${i === 1 ? 'bg-primary border-white/5' : 'bg-primary/5 border-outline-variant/10'} p-12 border group-hover:border-secondary transition-all h-full`}>
                   <span className="text-secondary font-label uppercase tracking-widest text-[10px] font-black mb-6 block">{v.type}</span>
-                  <h3 className={`text-4xl md:text-5xl font-headline mb-2 uppercase tracking-tighter italic ${i === 1 ? 'text-white' : 'text-primary'}`}>{v.name}</h3>
+                  <h3 className={`text-4xl md:text-5xl font-headline mb-2 uppercase tracking-tighter ${i === 1 ? 'text-white' : 'text-primary'}`}>{v.name}</h3>
                   <p className={`font-body text-sm uppercase tracking-[0.2rem] mb-8 ${i === 1 ? 'text-white/40' : 'text-primary/60'}`}>{v.role}</p>
-                  <p className={`leading-relaxed font-light italic ${i === 1 ? 'text-white/60' : 'text-on-surface-variant'}`}>
+                  <p className={`leading-relaxed font-light ${i === 1 ? 'text-white/60' : 'text-on-surface-variant'}`}>
                     {v.bio}
                   </p>
                 </div>

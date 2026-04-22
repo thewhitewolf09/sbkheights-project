@@ -24,7 +24,7 @@ export default async function Footer() {
           </p>
           <div className="mt-8 space-y-2">
             <p className="text-secondary/60 text-[10px] font-bold uppercase tracking-widest">Main Office</p>
-            <p className="text-white/60 text-xs font-body whitespace-pre-line leading-relaxed italic">
+            <p className="text-white/60 text-xs font-body whitespace-pre-line leading-relaxed">
               Khasra No. 68, Behind Canara Bank,{"\n"}
               Sector 45, Noida – 201301
             </p>
@@ -86,7 +86,7 @@ export default async function Footer() {
         <p className="text-white/30 font-label text-xs uppercase tracking-widest">
           © {new Date().getFullYear()} SBK Heights. All Rights Reserved.
         </p>
-        <p className="text-white/30 font-label text-xs uppercase tracking-widest italic opacity-50">
+        <p className="text-white/30 font-label text-xs uppercase tracking-widest opacity-50">
           Curated Architectural Excellence
         </p>
       </div>

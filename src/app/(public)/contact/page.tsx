@@ -72,7 +72,7 @@ export default function ContactUsPage() {
           <span className="text-secondary font-label uppercase tracking-[0.4rem] text-xs mb-6 block font-black">
             {data.header.badge}
           </span>
-          <h1 className="text-6xl md:text-9xl font-headline font-bold text-primary leading-[0.9] tracking-tighter uppercase italic whitespace-pre-line max-w-[75%]">
+          <h1 className="text-6xl md:text-9xl font-headline font-bold text-primary leading-[0.9] tracking-tighter uppercase whitespace-pre-line max-w-[75%]">
             {data.header.title}
           </h1>
         </FadeIn>
@@ -84,12 +84,12 @@ export default function ContactUsPage() {
           className="w-full lg:w-1/2 p-8 md:p-24 bg-surface flex flex-col justify-center"
         >
           <div className="max-w-xl mx-auto w-full">
-            <h2 className="text-4xl font-headline font-bold text-primary mb-12 uppercase tracking-tighter italic border-b border-primary/5 pb-4">Enquiry Form</h2>
+            <h2 className="text-4xl font-headline font-bold text-primary mb-12 uppercase tracking-tighter border-b border-primary/5 pb-4">Enquiry Form</h2>
             
             {success ? (
               <FadeIn className="bg-primary p-12 text-center text-white space-y-6 shadow-2xl">
                 <span className="material-symbols-outlined text-secondary text-6xl">verified</span>
-                <h3 className="text-3xl font-headline uppercase tracking-tighter italic font-bold">Submission Received.</h3>
+                <h3 className="text-3xl font-headline uppercase tracking-tighter font-bold">Submission Received.</h3>
                 <p className="font-body text-sm text-white/60">Find your dream house in your suitable place. Our team will contact you shortly.</p>
                 <button onClick={() => setSuccess(false)} className="bg-secondary text-primary px-10 py-4 uppercase text-[10px] font-black tracking-widest mt-4 shadow-xl hover:bg-white transition-all">Send another enquiry</button>
               </FadeIn>
@@ -127,7 +127,7 @@ export default function ContactUsPage() {
           >
              <div className="max-w-xl mx-auto w-full space-y-20 relative z-10">
                 <div className="border-b border-white/10 pb-10">
-                   <h2 className="text-4xl font-headline font-bold uppercase tracking-tighter italic text-secondary mb-4">Location Proximity</h2>
+                   <h2 className="text-4xl font-headline font-bold uppercase tracking-tighter text-secondary mb-4">Location Proximity</h2>
                    <p className="text-white/40 text-[10px] font-label uppercase tracking-widest font-bold">Discover how close you are to everything that matters.</p>
                 </div>
                 
@@ -140,7 +140,7 @@ export default function ContactUsPage() {
                                <li key={j} className="flex justify-between items-end group">
                                   <span className="text-white/60 text-xs font-body group-hover:text-white transition-colors">{item.n}</span>
                                   <div className="flex-grow border-b border-white/5 mx-2 mb-1 border-dotted group-hover:border-secondary/40 transition-all"></div>
-                                  <span className="text-white text-xs font-headline font-bold group-hover:text-secondary transition-colors italic">{item.d}</span>
+                                  <span className="text-white text-xs font-headline font-bold group-hover:text-secondary transition-colors">{item.d}</span>
                                 </li>
                             ))}
                          </ul>
@@ -152,7 +152,7 @@ export default function ContactUsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-12 border-b border-white/5">
                        <div>
                          <p className="font-label text-secondary text-[10px] uppercase tracking-widest mb-2 font-black">Direct Line</p>
-                         <p className="text-3xl font-headline font-bold italic text-white">{data.details.phone}</p>
+                         <p className="text-3xl font-headline font-bold text-white">{data.details.phone}</p>
                        </div>
                        <div className="flex flex-col justify-between h-full">
                          <div>
@@ -181,7 +181,7 @@ export default function ContactUsPage() {
                     </div>
                    <div>
                       <p className="font-label text-secondary text-[10px] uppercase tracking-widest mb-4 font-black">Strategic Address</p>
-                      <p className="text-2xl font-headline leading-tight italic font-bold text-white whitespace-pre-line">{data.details.address}</p>
+                      <p className="text-2xl font-headline leading-tight font-bold text-white whitespace-pre-line">{data.details.address}</p>
                    </div>
                 </div>
              </div>
@@ -194,7 +194,7 @@ export default function ContactUsPage() {
          <div className="max-w-7xl mx-auto px-6 md:px-12">
            <FadeIn className="mb-20 text-center lg:text-left">
               <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-4 block">Strategic Connectivity</span>
-              <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter italic">Map & Proximity</h2>
+              <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">Map & Proximity</h2>
            </FadeIn>
            
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -203,7 +203,7 @@ export default function ContactUsPage() {
                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-700"></div>
                  <div className="absolute bottom-8 left-8 bg-primary/90 backdrop-blur-md p-6 border border-secondary/20 max-w-xs">
                     <p className="text-secondary font-label text-[10px] uppercase tracking-widest font-black mb-2">High Fidelity Preview</p>
-                    <p className="text-white text-sm font-body italic">A detailed overview of the surrounding infrastructure and upcoming developments.</p>
+                    <p className="text-white text-sm font-body">A detailed overview of the surrounding infrastructure and upcoming developments.</p>
                  </div>
               </FadeIn>
               

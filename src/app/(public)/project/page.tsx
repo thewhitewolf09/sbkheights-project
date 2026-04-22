@@ -96,7 +96,7 @@ export default async function TheProjectPage() {
           <span className="inline-block text-secondary font-label text-[10px] md:text-xs font-black uppercase tracking-[0.3rem] md:tracking-[0.4rem] mb-4 md:mb-6">
             {data.hero.badge}
           </span>
-          <h1 className="text-white text-4xl sm:text-6xl md:text-9xl font-headline font-bold leading-[0.9] tracking-tighter mb-8 md:mb-10 whitespace-pre-line uppercase italic">
+          <h1 className="text-white text-4xl sm:text-6xl md:text-9xl font-headline font-bold leading-[0.9] tracking-tighter mb-8 md:mb-10 whitespace-pre-line uppercase">
             {data.hero.title}
           </h1>
           <div className="flex flex-wrap gap-6 md:gap-12 text-white/50 font-label text-[10px] uppercase tracking-widest border-t border-white/10 pt-6 md:pt-8 mt-4">
@@ -114,8 +114,8 @@ export default async function TheProjectPage() {
       <section className="py-32 px-6 md:px-12 bg-surface">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-24 text-center">
-             <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter italic">{data.details.title}</h2>
-             <p className="text-on-surface-variant font-body text-lg mt-4 max-w-2xl mx-auto italic">{data.details.subtitle}</p>
+             <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">{data.details.title}</h2>
+             <p className="text-on-surface-variant font-body text-lg mt-4 max-w-2xl mx-auto">{data.details.subtitle}</p>
           </FadeIn>
 
           <div className="space-y-40">
@@ -128,7 +128,7 @@ export default async function TheProjectPage() {
                  <div className="lg:col-span-12 xl:col-span-5 space-y-10">
                     <div>
                        <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-4 block">Unit Configuration</span>
-                       <h3 className="text-primary text-4xl md:text-5xl font-headline font-bold uppercase tracking-tighter italic">{unit.type}</h3>
+                       <h3 className="text-primary text-4xl md:text-5xl font-headline font-bold uppercase tracking-tighter">{unit.type}</h3>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-outline-variant/10 pt-10">
@@ -158,15 +158,15 @@ export default async function TheProjectPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
              <FadeIn>
                 <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-6 block text-center lg:text-left">Elite Facilities</span>
-                <h2 className="text-white text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter italic text-center lg:text-left">{data.facilities_meta.title}</h2>
-                <p className="text-white/40 text-lg font-body mt-8 leading-relaxed max-w-xl text-center lg:text-left italic">{data.facilities_meta.subtitle}</p>
+                <h2 className="text-white text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter text-center lg:text-left">{data.facilities_meta.title}</h2>
+                <p className="text-white/40 text-lg font-body mt-8 leading-relaxed max-w-xl text-center lg:text-left">{data.facilities_meta.subtitle}</p>
              </FadeIn>
              
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {(data.facilities || []).map((f: any, i: number) => (
                   <FadeIn key={i} delay={i * 0.1} className="bg-white/5 border border-white/5 p-8 hover:bg-white transition-all group duration-700 shadow-xl">
                      <span className="material-symbols-outlined text-secondary text-4xl mb-6 group-hover:text-primary transition-colors">{f.icon}</span>
-                     <h4 className="text-white group-hover:text-primary text-xl font-headline font-bold uppercase tracking-tighter mb-2 italic">{f.name}</h4>
+                     <h4 className="text-white group-hover:text-primary text-xl font-headline font-bold uppercase tracking-tighter mb-2">{f.name}</h4>
                      <p className="text-white/40 group-hover:text-primary/60 text-xs font-body font-light leading-relaxed">{f.desc}</p>
                   </FadeIn>
                 ))}
@@ -180,8 +180,8 @@ export default async function TheProjectPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                <FadeIn>
                   <span className="text-secondary font-label text-[10px] uppercase tracking-widest font-bold mb-4 block">Verified & Secured</span>
-                  <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter italic">{data.legal_meta.title}</h2>
-                  <p className="text-on-surface-variant text-lg font-body mt-8 leading-relaxed italic">{data.legal_meta.subtitle}</p>
+                  <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">{data.legal_meta.title}</h2>
+                  <p className="text-on-surface-variant text-lg font-body mt-8 leading-relaxed">{data.legal_meta.subtitle}</p>
                </FadeIn>
                
                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -200,7 +200,7 @@ export default async function TheProjectPage() {
           <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
              <FadeIn className="mb-20">
                 <span className="text-secondary font-label text-[10px] uppercase tracking-widest font-bold mb-4 block">{data.partners_meta.subtitle || 'Financial Partnerships'}</span>
-                <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter italic">{data.partners_meta.title}</h2>
+                <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">{data.partners_meta.title}</h2>
              </FadeIn>
             
             <StaggerContainer className="flex flex-wrap justify-center gap-8 md:gap-16">
@@ -222,8 +222,8 @@ export default async function TheProjectPage() {
           <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary via-transparent to-transparent"></div>
         </div>
         <FadeIn className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="text-white text-5xl md:text-8xl font-headline font-bold mb-10 leading-none tracking-tighter uppercase italic">{data.cta.title}</h2>
-          <p className="text-white/40 text-lg mb-12 font-body italic max-w-2xl mx-auto">{data.cta.desc}</p>
+          <h2 className="text-white text-5xl md:text-8xl font-headline font-bold mb-10 leading-none tracking-tighter uppercase">{data.cta.title}</h2>
+          <p className="text-white/40 text-lg mb-12 font-body max-w-2xl mx-auto">{data.cta.desc}</p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
              <Link href="/contact" className="bg-secondary text-primary px-12 py-6 font-black font-label uppercase tracking-widest text-xs shadow-2xl hover:bg-white transition-all">Request a Viewing</Link>
              <Link href="/gallery" className="border border-white/20 text-white px-12 py-6 font-black font-label uppercase tracking-widest text-xs hover:bg-white hover:text-primary transition-all backdrop-blur-sm">Explore Gallery</Link>

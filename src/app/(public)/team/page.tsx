@@ -8,7 +8,7 @@ export default function OurTeamPage() {
         <FadeIn direction="right">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8 leading-tight">
             LEADERSHIP <br />
-            <span className="text-secondary italic">EXCELLENCE</span>
+            <span className="text-secondary">EXCELLENCE</span>
           </h2>
           <p className="text-lg text-on-surface-variant font-light leading-relaxed mb-8 max-w-xl">
             Our leadership team comprises visionaries who have redefined the
@@ -43,7 +43,7 @@ export default function OurTeamPage() {
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlu2XGNCTP9Kt7HGC4p_f4b9E_bV7YSdZYFQ1g7tO7SumuAlJS6WD9TT9pw1eDAt5mXJfQoDhAo2jumDRuUdJ3_HCALvHmY4uJCGUj45weGLrAMoQht3-Lij62xP0b9c3Yh2feJEPovGoF8S7csVyG3Md_A_3d_sjgQSVunSEVQO6YEqxrjzS_PANEDe7300sjK5T27V3HDRvY1J_AkSolCf7Pqp2rXMCCfC4mK8DcJtsD8GNNA5h3XxDj11X40O_FuV2afco1SlU"
           />
           <div className="absolute -bottom-8 -left-8 bg-secondary p-12 hidden lg:block shadow-2xl">
-            <p className="text-white font-serif text-2xl italic leading-tight">
+            <p className="text-white font-serif text-2xl leading-tight">
               "Integrity is the foundation of every height we reach."
             </p>
           </div>
