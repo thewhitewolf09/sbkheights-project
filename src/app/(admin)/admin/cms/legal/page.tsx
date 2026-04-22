@@ -10,7 +10,7 @@ export default function LegalCMSEditor() {
     updated: "",
     privacy: [],
     terms: [],
-    governance: { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "shreebk.infratech@gmail.com" }
+    governance: { title: "", content: "", email: "" }
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function LegalCMSEditor() {
           updated: data.updated || new Date().toLocaleDateString(undefined, { month: 'long', year: 'numeric' }),
           privacy: Array.isArray(data.privacy) ? data.privacy : [{ title: "Privacy Policy", content: data.privacy || "" }],
           terms: Array.isArray(data.terms) ? data.terms : [{ title: "Terms of Service", content: data.terms || "" }],
-          governance: data.governance || { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "shreebk.infratech@gmail.com" }
+          governance: data.governance || { title: "", content: "", email: "" }
         };
         setContent(migrated);
       }
