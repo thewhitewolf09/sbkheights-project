@@ -127,22 +127,17 @@ export default async function TheProjectPage() {
                  </div>
                  <div className="lg:col-span-12 xl:col-span-5 space-y-10">
                     <div>
-                       <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-4 block">Unit Configuration</span>
+                       <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-4 block">
+                          {data.units_meta?.title || "Unit Configuration"}
+                       </span>
                        <h3 className="text-primary text-4xl md:text-5xl font-headline font-bold uppercase tracking-tighter">{unit.type}</h3>
                     </div>
                     
                     <div className="grid grid-cols-2 gap-y-8 gap-x-12 border-t border-outline-variant/10 pt-10">
-                       {[
-                         { l: "Area", v: unit.area },
-                         { l: "Interior", v: unit.interior },
-                         { l: "Bedrooms", v: unit.beds },
-                         { l: "Bathrooms", v: unit.baths },
-                         { l: "Pool Access", v: unit.pool },
-                         { l: "Additionals", v: unit.additionals }
-                       ].map((spec, j) => (
+                       {(unit.specs || []).map((spec: any, j: number) => (
                          <div key={j} className="group">
-                            <p className="text-[10px] uppercase tracking-widest text-on-surface-variant/40 font-bold mb-1 group-hover:text-secondary transition-colors">{spec.l}</p>
-                            <p className="text-lg font-headline text-primary font-bold">{spec.v}</p>
+                            <p className="text-[10px] uppercase tracking-widest text-on-surface-variant/40 font-bold mb-1 group-hover:text-secondary transition-colors">{spec.label}</p>
+                            <p className="text-lg font-headline text-primary font-bold">{spec.val}</p>
                          </div>
                        ))}
                     </div>

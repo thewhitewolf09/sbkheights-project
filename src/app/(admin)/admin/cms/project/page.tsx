@@ -19,33 +19,15 @@ export default function ProjectCMSEditor() {
     units: [
       {
         type: "3 BHK Floor Plan",
-        area: "1750 sq. ft.",
-        interior: "1600 sq. ft.",
-        beds: "3 Bedrooms",
-        baths: "3 Bathrooms",
-        pool: "Private Access",
-        additionals: "Study Room",
         image: "/images/bhk_3.png",
-      },
-      {
-        type: "2 BHK Floor Plan",
-        area: "1250 sq. ft.",
-        interior: "1150 sq. ft.",
-        beds: "2 Bedrooms",
-        baths: "2 Bathrooms",
-        pool: "Community Access",
-        additionals: "Utility Area",
-        image: "/images/bhk_2.png",
-      },
-      {
-        type: "1 BHK Floor Plan",
-        area: "850 sq. ft.",
-        interior: "750 sq. ft.",
-        beds: "1 Bedroom",
-        baths: "1 Bathroom",
-        pool: "Community Access",
-        additionals: "Balcony",
-        image: "/images/bhk_1.png",
+        specs: [
+          { label: "Area", val: "1750 sq. ft." },
+          { label: "Interior", val: "1600 sq. ft." },
+          { label: "Bedrooms", val: "3 Bedrooms" },
+          { label: "Bathrooms", val: "3 Bathrooms" },
+          { label: "Pool Access", val: "Private Access" },
+          { label: "Additionals", val: "Study Room" },
+        ]
       },
     ],
     details: {
@@ -54,13 +36,11 @@ export default function ProjectCMSEditor() {
     },
     facilities_meta: {
       title: "Modern Amenities",
-      subtitle:
-        "Designed to facilitate an effortless lifestyle, our premium facilities ensure safety, health, and convenience at every turn.",
+      subtitle: "Designed to facilitate an effortless lifestyle, our premium facilities ensure safety, health, and convenience at every turn.",
     },
     legal_meta: {
       title: "Legal & Compliance",
-      subtitle:
-        "All legal and land-related documents for SBK Heights are verified and cleared by the respective authorities.",
+      subtitle: "All legal and land-related documents for SBK Heights are verified and cleared by the respective authorities.",
     },
     partners_meta: { title: "Loan Partners", subtitle: "" },
     facilities: [
@@ -118,14 +98,21 @@ export default function ProjectCMSEditor() {
             if (u.includes("1")) img = "/images/bhk_1.png";
             return {
               type: u,
-              area: "",
-              interior: "",
-              beds: "",
-              baths: "",
-              pool: "",
-              additionals: "",
               image: img,
+              specs: []
             };
+          }
+          // Migration from legacy fixed keys to dynamic specs
+          if (!u.specs) {
+            const specs = [
+              { label: "Total Area", val: u.area || "" },
+              { label: "Interior", val: u.interior || "" },
+              { label: "Bedrooms", val: u.beds || "" },
+              { label: "Bathrooms", val: u.baths || "" },
+              { label: "Pool Access", val: u.pool || "" },
+              { label: "Additionals", val: u.additionals || "" },
+            ].filter(s => s.val); // Only keep non-empty specs
+            return { ...u, specs };
           }
           return u;
         });
@@ -187,17 +174,27 @@ export default function ProjectCMSEditor() {
       units: [
         ...content.units,
         {
-          type: "New Unit",
-          area: "",
-          interior: "",
-          beds: "",
-          baths: "",
-          pool: "",
-          additionals: "",
+          type: "New Unit Type",
           image: "",
+          specs: [
+            { label: "Area", val: "" },
+            { label: "Beds", val: "" }
+          ],
         },
       ],
     });
+
+  const addSpec = (unitIdx: number) => {
+    const newUnits = [...content.units];
+    newUnits[unitIdx].specs = [...(newUnits[unitIdx].specs || []), { label: "New Spec", val: "" }];
+    setContent({ ...content, units: newUnits });
+  };
+
+  const removeSpec = (unitIdx: number, specIdx: number) => {
+    const newUnits = [...content.units];
+    newUnits[unitIdx].specs = newUnits[unitIdx].specs.filter((_: any, idx: number) => idx !== specIdx);
+    setContent({ ...content, units: newUnits });
+  };
   const removeUnit = (i: number) =>
     setContent({
       ...content,
@@ -364,11 +361,44 @@ export default function ProjectCMSEditor() {
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm relative">
             <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
               <h3 className="text-xl font-headline text-primary uppercase tracking-tighter">
-                2. Unit Configuration (BHK)
+                Property Introduction
               </h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase text-secondary tracking-widest">Section Label</label>
+                <input
+                  type="text"
+                  value={content.details.title}
+                  onChange={(e) => setContent({...content, details: {...content.details, title: e.target.value}})}
+                  className="w-full bg-surface p-4 text-xs font-black text-primary outline-none focus:border-secondary transition-all uppercase"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase text-on-surface-variant tracking-widest">Section Subtitle</label>
+                <textarea
+                  value={content.details.subtitle}
+                  onChange={(e) => setContent({...content, details: {...content.details, subtitle: e.target.value}})}
+                  className="w-full bg-surface p-4 text-[10px] font-body text-on-surface-variant outline-none focus:border-secondary transition-all resize-none h-20"
+                />
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm relative">
+            <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
+              <div className="space-y-2 flex-1">
+                <label className="text-[10px] font-bold uppercase text-secondary tracking-widest">Section Heading</label>
+                <input
+                  type="text"
+                  value={content.units_meta?.title || "Unit Configuration"}
+                  onChange={(e) => setContent({...content, units_meta: {...(content.units_meta || {}), title: e.target.value}})}
+                  className="w-full bg-transparent text-xl font-headline text-primary uppercase tracking-tighter outline-none"
+                />
+              </div>
               <button
                 onClick={addUnit}
-                className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-4 py-2 hover:bg-secondary hover:text-primary transition-all"
+                className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-4 py-2 hover:bg-secondary hover:text-primary transition-all self-end"
               >
                 Add Unit Type
               </button>
@@ -419,31 +449,52 @@ export default function ProjectCMSEditor() {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 pt-4 border-t border-outline-variant/5">
-                    {[
-                      { l: "Total Area", k: "area" },
-                      { l: "Interior", k: "interior" },
-                      { l: "Bedrooms", k: "beds" },
-                      { l: "Bathrooms", k: "baths" },
-                      { l: "Pool Access", k: "pool" },
-                      { l: "Additionals", k: "additionals" },
-                    ].map((spec) => (
-                      <div key={spec.k} className="space-y-1">
-                        <label className="text-[10px] font-bold uppercase text-on-surface-variant/40 tracking-tighter">
-                          {spec.l}
-                        </label>
-                        <input
-                          type="text"
-                          value={unit[spec.k]}
-                          onChange={(e) => {
-                            const newU = [...content.units];
-                            newU[i][spec.k] = e.target.value;
-                            setContent({ ...content, units: newU });
-                          }}
-                          className="w-full bg-white border border-outline-variant/10 p-3 text-xs text-primary outline-none focus:border-secondary"
-                        />
-                      </div>
-                    ))}
+                  <div className="space-y-6 pt-6 border-t border-outline-variant/5">
+                    <div className="flex justify-between items-center">
+                       <label className="text-[10px] font-bold uppercase text-secondary tracking-widest">
+                        Unit Specifications
+                      </label>
+                      <button 
+                        onClick={() => addSpec(i)}
+                        className="text-[10px] font-black uppercase text-secondary/60 hover:text-secondary"
+                      >
+                        + Add Spec
+                      </button>
+                    </div>
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+                      {(unit.specs || []).map((spec: any, j: number) => (
+                        <div key={j} className="bg-white border border-outline-variant/10 p-4 relative group/spec">
+                          <button 
+                            onClick={() => removeSpec(i, j)}
+                            className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover/spec:opacity-100 transition-all z-10"
+                          >
+                            <span className="material-symbols-outlined text-[10px]">close</span>
+                          </button>
+                          <input 
+                            type="text"
+                            value={spec.label}
+                            placeholder="Label (e.g. Area)"
+                            onChange={(e) => {
+                              const newU = [...content.units];
+                              newU[i].specs[j].label = e.target.value;
+                              setContent({ ...content, units: newU });
+                            }}
+                            className="w-full bg-transparent text-[8px] font-bold text-secondary uppercase tracking-widest outline-none mb-1"
+                          />
+                          <input 
+                            type="text"
+                            value={spec.val}
+                            placeholder="Value"
+                            onChange={(e) => {
+                              const newU = [...content.units];
+                              newU[i].specs[j].val = e.target.value;
+                              setContent({ ...content, units: newU });
+                            }}
+                            className="w-full bg-transparent text-xs font-headline text-primary font-bold outline-none"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -452,12 +503,30 @@ export default function ProjectCMSEditor() {
 
           <FadeIn className="bg-white p-10 border border-outline-variant/10 shadow-sm">
             <div className="flex justify-between items-center mb-10 border-b border-outline-variant/5 pb-4">
-              <h3 className="text-xl font-headline text-primary uppercase tracking-tighter">
-                3. Modern Amenities
-              </h3>
+              <div className="space-y-6 flex-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase text-secondary tracking-widest">Amenities Heading</label>
+                    <input
+                      type="text"
+                      value={content.facilities_meta.title}
+                      onChange={(e) => setContent({...content, facilities_meta: {...content.facilities_meta, title: e.target.value}})}
+                      className="w-full bg-surface p-4 text-xs font-black text-primary outline-none focus:border-secondary transition-all uppercase"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-bold uppercase text-secondary tracking-widest">Amenities Subtitle</label>
+                    <textarea
+                      value={content.facilities_meta.subtitle}
+                      onChange={(e) => setContent({...content, facilities_meta: {...content.facilities_meta, subtitle: e.target.value}})}
+                      className="w-full bg-surface p-4 text-[10px] font-body text-on-surface-variant outline-none focus:border-secondary transition-all resize-none h-20"
+                    />
+                  </div>
+                </div>
+              </div>
               <button
                 onClick={addFacility}
-                className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-4 py-2 hover:bg-secondary hover:text-primary transition-all"
+                className="text-[10px] font-black uppercase text-secondary border border-secondary/20 px-4 py-2 hover:bg-secondary hover:text-primary transition-all self-end ml-4"
               >
                 Add Amenity
               </button>
@@ -470,7 +539,7 @@ export default function ProjectCMSEditor() {
                 >
                   <button
                     onClick={() => removeFacility(i)}
-                    className="absolute top-4 right-4 text-on-surface-variant/20 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all"
+                    className="absolute top-4 right-4 text-on-surface-variant/20 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-all font-label"
                   >
                     <span className="material-symbols-outlined text-sm">
                       delete
@@ -528,12 +597,28 @@ export default function ProjectCMSEditor() {
           <FadeIn className="bg-primary p-8 text-white relative group overflow-hidden shadow-2xl">
             <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
             <div className="flex justify-between items-center mb-8 pb-2 border-b border-white/5">
-              <h3 className="text-lg font-headline uppercase tracking-tighter text-secondary">
-                4. Legal & Compliance
-              </h3>
+              <div className="space-y-4 flex-1">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase text-secondary tracking-tighter">Legal Heading</label>
+                  <input
+                    type="text"
+                    value={content.legal_meta.title}
+                    onChange={(e) => setContent({...content, legal_meta: {...content.legal_meta, title: e.target.value}})}
+                    className="w-full bg-white/10 border border-white/10 p-4 text-xs font-black text-secondary outline-none focus:border-secondary transition-all uppercase"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase text-white/40 tracking-tighter">Legal Subtitle</label>
+                  <textarea
+                    value={content.legal_meta.subtitle}
+                    onChange={(e) => setContent({...content, legal_meta: {...content.legal_meta, subtitle: e.target.value}})}
+                    className="w-full bg-white/10 border border-white/10 p-4 text-[10px] font-body text-white/60 outline-none focus:border-secondary transition-all resize-none h-20"
+                  />
+                </div>
+              </div>
               <button
                 onClick={addLegal}
-                className="text-[10px] font-black uppercase text-secondary hover:text-white transition-colors"
+                className="text-[10px] font-black uppercase text-secondary hover:text-white transition-colors self-end ml-4"
               >
                 Add Doc
               </button>
@@ -572,12 +657,29 @@ export default function ProjectCMSEditor() {
 
           <FadeIn className="bg-white p-8 border border-outline-variant/10 shadow-sm">
             <div className="flex justify-between items-center mb-8 pb-2 border-b border-outline-variant/5">
-              <h3 className="text-lg font-headline text-primary uppercase tracking-tighter">
-                5. Loan Partners
-              </h3>
+              <div className="space-y-4 flex-1">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase text-primary tracking-tighter">Partners Heading</label>
+                  <input
+                    type="text"
+                    value={content.partners_meta.title}
+                    onChange={(e) => setContent({...content, partners_meta: {...content.partners_meta, title: e.target.value}})}
+                    className="w-full bg-surface p-3 text-xs font-black text-primary outline-none focus:border-secondary transition-all uppercase"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold uppercase text-on-surface-variant tracking-tighter">Partners Subtitle</label>
+                  <input
+                    type="text"
+                    value={content.partners_meta.subtitle}
+                    onChange={(e) => setContent({...content, partners_meta: {...content.partners_meta, subtitle: e.target.value}})}
+                    className="w-full bg-surface p-3 text-[10px] font-body text-on-surface-variant outline-none focus:border-secondary transition-all"
+                  />
+                </div>
+              </div>
               <button
                 onClick={addPartner}
-                className="text-[10px] font-black uppercase text-secondary hover:text-primary transition-colors"
+                className="text-[10px] font-black uppercase text-secondary hover:text-primary transition-colors self-end ml-4"
               >
                 Add Bank
               </button>
