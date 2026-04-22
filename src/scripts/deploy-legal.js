@@ -48,7 +48,7 @@ async function deployLegal() {
         },
         {
           title: "Your Rights & Administrative Desk",
-          content: "You Maintain the right to access, update, or request the deletion of your personal records from our database. To withdraw your communication consent or for any legal queries, please reach out to our legal desk at shreebkinfratech@gmail.com."
+          content: "You Maintain the right to access, update, or request the deletion of your personal records from our database. To withdraw your communication consent or for any legal queries, please reach out to our legal desk at shreebk.infratech@gmail.com."
         }
       ],
       terms: [

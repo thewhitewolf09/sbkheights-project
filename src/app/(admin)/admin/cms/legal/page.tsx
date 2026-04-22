@@ -10,7 +10,7 @@ export default function LegalCMSEditor() {
     updated: "",
     privacy: [],
     terms: [],
-    governance: { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "legal@sbkheights.com" }
+    governance: { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "shreebk.infratech@gmail.com" }
   });
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function LegalCMSEditor() {
           updated: data.updated || new Date().toLocaleDateString(undefined, { month: 'long', year: 'numeric' }),
           privacy: Array.isArray(data.privacy) ? data.privacy : [{ title: "Privacy Policy", content: data.privacy || "" }],
           terms: Array.isArray(data.terms) ? data.terms : [{ title: "Terms of Service", content: data.terms || "" }],
-          governance: data.governance || { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "legal@sbkheights.com" }
+          governance: data.governance || { title: "Governance", content: "Our legal team is available to clarify any aspects of our service agreements.", email: "shreebk.infratech@gmail.com" }
         };
         setContent(migrated);
       }
@@ -141,6 +141,46 @@ export default function LegalCMSEditor() {
             <span className="material-symbols-outlined text-lg">add_circle</span>
             Add New Content Section
           </button>
+
+          <div className="bg-white p-10 rounded-2xl border-2 border-secondary/10 shadow-sm relative overflow-hidden group hover:border-secondary/30 transition-all mt-12 bg-linear-to-br from-white to-secondary/5">
+             <div className="flex items-center gap-4 mb-8 pb-4 border-b border-gray-100">
+                <span className="material-symbols-outlined text-secondary text-2xl">gavel</span>
+                <h3 className="text-2xl font-headline font-bold text-primary uppercase tracking-tighter">Governance & Contact</h3>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                    <div className="space-y-1">
+                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary">Card Title</label>
+                       <input 
+                          type="text" 
+                          value={content.governance?.title || ""}
+                          onChange={(e) => setContent({ ...content, governance: { ...content.governance, title: e.target.value } })}
+                          className="w-full bg-white border border-gray-100 p-4 text-sm font-headline font-bold text-primary outline-none focus:border-secondary transition-all rounded-xl shadow-inner"
+                          placeholder="e.g. Governance"
+                       />
+                    </div>
+                    <div className="space-y-1">
+                       <label className="text-[10px] font-bold uppercase tracking-widest text-secondary">Inquiry Email</label>
+                       <input 
+                          type="text" 
+                          value={content.governance?.email || ""}
+                          onChange={(e) => setContent({ ...content, governance: { ...content.governance, email: e.target.value } })}
+                          className="w-full bg-white border border-gray-100 p-4 text-xs font-label text-primary outline-none focus:border-secondary transition-all rounded-xl shadow-inner"
+                          placeholder="legal@sbkheights.com"
+                       />
+                    </div>
+                </div>
+                <div className="space-y-1">
+                   <label className="text-[10px] font-bold uppercase tracking-widest text-secondary">Description Context</label>
+                   <textarea 
+                      value={content.governance?.content || ""}
+                      onChange={(e) => setContent({ ...content, governance: { ...content.governance, content: e.target.value } })}
+                      className="w-full bg-white border border-gray-100 p-4 text-xs font-body text-on-surface-variant outline-none focus:border-secondary transition-all rounded-xl shadow-inner min-h-[140px] resize-none"
+                      placeholder="Enter the descriptive text for the governance card..."
+                   />
+                </div>
+             </div>
+          </div>
         </div>
 
         <div className="lg:col-span-4 space-y-6">
@@ -163,37 +203,7 @@ export default function LegalCMSEditor() {
              </div>
           </div>
 
-          <div className="bg-white p-8 rounded-xl border-2 border-primary/5 shadow-sm relative overflow-hidden group hover:border-secondary/20 transition-all">
-             <h3 className="text-lg font-headline font-bold text-primary mb-6 border-b border-gray-100 pb-2 uppercase">Governance Contact</h3>
-             <div className="space-y-4">
-                <div className="space-y-1">
-                   <label className="text-[9px] font-bold uppercase tracking-widest text-secondary">Section Title</label>
-                   <input 
-                      type="text" 
-                      value={content.governance?.title || ""}
-                      onChange={(e) => setContent({ ...content, governance: { ...content.governance, title: e.target.value } })}
-                      className="w-full bg-gray-50 border border-gray-100 p-3 text-xs font-headline font-bold text-primary outline-none focus:border-secondary transition-all rounded-lg"
-                   />
-                </div>
-                <div className="space-y-1">
-                   <label className="text-[9px] font-bold uppercase tracking-widest text-secondary">Context/Message</label>
-                   <textarea 
-                      value={content.governance?.content || ""}
-                      onChange={(e) => setContent({ ...content, governance: { ...content.governance, content: e.target.value } })}
-                      className="w-full bg-gray-50 border border-gray-100 p-3 text-xs font-body text-on-surface-variant outline-none focus:border-secondary transition-all rounded-lg min-h-[80px] resize-none"
-                   />
-                </div>
-                <div className="space-y-1">
-                   <label className="text-[9px] font-bold uppercase tracking-widest text-secondary">Contact Email</label>
-                   <input 
-                      type="text" 
-                      value={content.governance?.email || ""}
-                      onChange={(e) => setContent({ ...content, governance: { ...content.governance, email: e.target.value } })}
-                      className="w-full bg-gray-50 border border-gray-100 p-3 text-[10px] font-label text-primary outline-none focus:border-secondary transition-all rounded-lg"
-                   />
-                </div>
-             </div>
-          </div>
+
 
           <button 
             onClick={handleSave}

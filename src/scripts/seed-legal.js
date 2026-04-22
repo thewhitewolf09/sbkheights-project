@@ -49,7 +49,7 @@ async function seed() {
         },
         { 
           title: "VI. User Sovereignty & Rights", 
-          content: "You have the right to access, rectify, or request the deletion of your personal records. For any governance queries or to withdraw communication consent, contact our legal desk at shreebkinfratech@gmail.com." 
+          content: "You have the right to access, rectify, or request the deletion of your personal records. For any governance queries or to withdraw communication consent, contact our legal desk at shreebk.infratech@gmail.com." 
         }
       ],
       terms: [

@@ -8,7 +8,7 @@ import bcrypt from "bcryptjs";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/lib/auth";
 import crypto from "crypto";
-import { sendPasswordResetEmail } from "./mail";
+import { sendPasswordResetEmail, sendEnquiryNotificationEmail } from "./mail";
 
 // ... existing code ...
 
@@ -143,6 +143,19 @@ export async function submitEnquiry(formData: { name: string; phone: string; ema
   try {
     await connectToDatabase();
     await Enquiry.create(formData);
+    
+    // Fetch Governance Email for notification
+    const legalData = await getCMSContent("legal", "all");
+    const adminEmail = legalData?.governance?.email || "shreebk.infratech@gmail.com";
+    
+    // Send Notification Email
+    await sendEnquiryNotificationEmail(adminEmail, {
+      name: formData.name,
+      email: formData.email || "",
+      phone: formData.phone,
+      message: formData.message || ""
+    });
+
     revalidatePath("/admin/enquiries");
     return { success: true };
   } catch (error: any) {

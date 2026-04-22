@@ -12,7 +12,7 @@ export default function ContactUsPage() {
     details: { 
       address: "Khasra No. 68, Behind Canara Bank,\nSector 45, Noida – 201301", 
       phone: "+91 9350962929", 
-      email: "shreebkinfratech@gmail.com" 
+      email: "shreebk.infratech@gmail.com" 
     },
     proximity: [
       { cat: "Hyper-Local Connectivity", items: [{ n: "Sustain Green", d: "50 m" }, { n: "Chandra Vatika", d: "100 m" }, { n: "Godrej Woods", d: "500 m" }] },

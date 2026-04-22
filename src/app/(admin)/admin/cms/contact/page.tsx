@@ -11,7 +11,7 @@ export default function ContactUsCMSEditor() {
     details: { 
       address: "Khasra No. 68, Behind Canara Bank,\nSector 45, Noida – 201301", 
       phone: "+91 9350962929", 
-      email: "shreebkinfratech@gmail.com",
+      email: "shreebk.infratech@gmail.com",
       socials: [
         { name: "Instagram", url: "https://instagram.com/sbk" },
         { name: "LinkedIn", url: "https://linkedin.com/sbk" }
