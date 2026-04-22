@@ -17,7 +17,7 @@ export default async function LegalPage() {
       <section className="px-6 md:px-12 py-32 max-w-480 mx-auto">
         <FadeIn className="mb-20">
           <div className="inline-block bg-secondary px-4 py-1 mb-6">
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Legal Document</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-bold text-primary">Legal Document</span>
           </div>
           <h1 className="text-5xl md:text-9xl font-headline font-bold text-primary mb-8 leading-[0.9] tracking-tighter uppercase">
             Privacy Policy &amp; <br />
@@ -28,7 +28,7 @@ export default async function LegalPage() {
               Our commitment to architectural transparency and digital security. These documents govern your engagement with the SBK legacy.
             </p>
             <div className="md:ml-auto text-right">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-secondary mb-1">Last Updated</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-secondary mb-1">Last Updated</p>
               <p className="text-2xl font-headline font-bold text-primary uppercase">{data.updated || 'April 2026'}</p>
             </div>
           </div>
@@ -38,18 +38,18 @@ export default async function LegalPage() {
           <aside className="lg:col-span-3 hidden lg:block">
             <div className="sticky top-40 space-y-12">
               <nav className="flex flex-col space-y-6">
-                <a className="text-secondary font-bold text-[10px] uppercase tracking-[0.3em] border-l-2 border-secondary pl-6 transition-all" href="#privacy">01. Privacy Policy</a>
-                <a className="text-on-surface-variant/40 hover:text-primary font-bold text-[10px] uppercase tracking-[0.3em] pl-6 transition-all border-l-2 border-transparent" href="#terms">02. Terms of Service</a>
+                <a className="text-secondary font-bold text-xs uppercase tracking-[0.3em] border-l-2 border-secondary pl-6 transition-all" href="#privacy">01. Privacy Policy</a>
+                <a className="text-on-surface-variant/40 hover:text-primary font-bold text-xs uppercase tracking-[0.3em] pl-6 transition-all border-l-2 border-transparent" href="#terms">02. Terms of Service</a>
               </nav>
               {data.governance?.title && (
                 <div className="bg-primary p-8 shadow-2xl relative overflow-hidden group">
                   <div className="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
                   <h4 className="font-headline text-lg font-bold mb-4 uppercase tracking-tighter text-secondary">{data.governance.title}</h4>
                   {data.governance.content && (
-                    <p className="text-[10px] text-white/40 mb-8 leading-relaxed font-label uppercase tracking-widest font-bold">{data.governance.content}</p>
+                    <p className="text-xs text-white/60 mb-8 leading-relaxed font-label uppercase tracking-widest font-bold">{data.governance.content}</p>
                   )}
                   {data.governance.email && (
-                    <a className="text-white text-[10px] font-bold border-b border-secondary/40 pb-1 inline-block uppercase tracking-widest hover:text-secondary transition-colors" href={`mailto:${data.governance.email}`}>{data.governance.email}</a>
+                    <a className="text-white text-xs font-bold border-b border-secondary/40 pb-1 inline-block uppercase tracking-widest hover:text-secondary transition-colors" href={`mailto:${data.governance.email}`}>{data.governance.email}</a>
                   )}
                 </div>
               )}
@@ -66,7 +66,7 @@ export default async function LegalPage() {
               <div className="space-y-20">
                 {privacySections.map((section: any, idx: number) => (
                   <FadeIn key={idx} className="space-y-6">
-                    <h3 className="text-xs font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
+                    <h3 className="text-sm font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
                       <span className="w-8 h-[1px] bg-secondary/30"></span>
                       {section.title}
                     </h3>
@@ -92,7 +92,7 @@ export default async function LegalPage() {
               <div className="space-y-20">
                 {termsSections.map((section: any, idx: number) => (
                   <FadeIn key={idx} className="space-y-6">
-                    <h3 className="text-xs font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
+                    <h3 className="text-sm font-label uppercase tracking-[0.3em] text-secondary font-black flex items-center gap-4">
                       <span className="w-8 h-[1px] bg-secondary/30"></span>
                       {section.title}
                     </h3>
@@ -108,10 +108,10 @@ export default async function LegalPage() {
                <div className="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
                <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/5 rounded-full group-hover:bg-secondary/10 transition-all duration-[3s]"></div>
                <h3 className="text-4xl font-headline mb-8 uppercase tracking-tighter text-secondary relative z-10">Commitment to Integrity</h3>
-               <p className="text-white/40 leading-relaxed mb-12 font-body text-xl relative z-10 max-w-2xl">
+               <p className="text-white/60 leading-relaxed mb-12 font-body text-xl relative z-10 max-w-2xl">
                  "SBK Heights is built on a foundation of trust. These legal documents ensure our client relationships remain as permanent as the structures we curate."
                </p>
-               <button className="bg-secondary text-primary px-12 py-5 text-[10px] font-label font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-xl relative z-10">Download Governance Packet</button>
+               <button className="bg-secondary text-primary px-12 py-5 text-sm font-label font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-xl relative z-10">Download Governance Packet</button>
             </section>
           </article>
         </div>

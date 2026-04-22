@@ -91,27 +91,27 @@ export default function ContactUsPage() {
                 <span className="material-symbols-outlined text-secondary text-6xl">verified</span>
                 <h3 className="text-3xl font-headline uppercase tracking-tighter font-bold">Submission Received.</h3>
                 <p className="font-body text-sm text-white/60">Find your dream house in your suitable place. Our team will contact you shortly.</p>
-                <button onClick={() => setSuccess(false)} className="bg-secondary text-primary px-10 py-4 uppercase text-[10px] font-black tracking-widest mt-4 shadow-xl hover:bg-white transition-all">Send another enquiry</button>
+                <button onClick={() => setSuccess(false)} className="bg-secondary text-primary px-10 py-4 uppercase text-xs font-black tracking-widest mt-4 shadow-xl hover:bg-white transition-all">Send another enquiry</button>
               </FadeIn>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-12">
                 <div className="relative group">
-                  <label className="font-label uppercase tracking-widest text-[10px] text-on-surface-variant/40 mb-2 block transition-colors group-focus-within:text-secondary font-black">Full Name</label>
+                  <label className="font-label uppercase tracking-widest text-xs text-on-surface-variant/60 mb-2 block transition-colors group-focus-within:text-secondary font-black">Full Name</label>
                   <input name="name" required className="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 font-body text-primary focus:ring-0 placeholder:text-on-surface-variant/20 outline-none focus:border-secondary transition-all" placeholder="Enter your name" type="text" />
                 </div>
                 <div className="relative group">
-                  <label className="font-label uppercase tracking-widest text-[10px] text-on-surface-variant/40 mb-2 block transition-colors group-focus-within:text-secondary font-black">Email Address</label>
+                  <label className="font-label uppercase tracking-widest text-xs text-on-surface-variant/60 mb-2 block transition-colors group-focus-within:text-secondary font-black">Email Address</label>
                   <input name="email" required className="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 font-body text-primary focus:ring-0 placeholder:text-on-surface-variant/20 outline-none focus:border-secondary transition-all" placeholder="Enter your email" type="email" />
                 </div>
                 <div className="relative group">
-                  <label className="font-label uppercase tracking-widest text-[10px] text-on-surface-variant/40 mb-2 block transition-colors group-focus-within:text-secondary font-black">Phone Number</label>
+                  <label className="font-label uppercase tracking-widest text-xs text-on-surface-variant/60 mb-2 block transition-colors group-focus-within:text-secondary font-black">Phone Number</label>
                   <input name="phone" required className="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 font-body text-primary focus:ring-0 placeholder:text-on-surface-variant/20 outline-none focus:border-secondary transition-all" placeholder="+91 XXX XXX XXXX" type="tel" />
                 </div>
                 <div className="relative group">
-                  <label className="font-label uppercase tracking-widest text-[10px] text-on-surface-variant/40 mb-2 block transition-colors group-focus-within:text-secondary font-black">Message / Inquiry</label>
+                  <label className="font-label uppercase tracking-widest text-xs text-on-surface-variant/60 mb-2 block transition-colors group-focus-within:text-secondary font-black">Message / Inquiry</label>
                   <textarea name="message" className="w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant py-4 font-body text-primary focus:ring-0 placeholder:text-on-surface-variant/20 resize-none outline-none focus:border-secondary transition-all" placeholder="How can we assist you with SBK Heights?" rows={3}></textarea>
                 </div>
-                {error && <p className="text-red-500 text-[10px] uppercase font-bold">{error}</p>}
+                {error && <p className="text-red-500 text-xs uppercase font-bold">{error}</p>}
                 <button disabled={loading} className="w-full bg-primary text-white py-6 font-label font-black uppercase tracking-[0.3rem] text-xs hover:bg-secondary hover:text-primary transition-all duration-500 relative disabled:opacity-50 shadow-2xl" type="submit">
                   {loading ? "Connecting..." : "Request Call-Back"}
                 </button>
@@ -128,13 +128,13 @@ export default function ContactUsPage() {
              <div className="max-w-xl mx-auto w-full space-y-20 relative z-10">
                 <div className="border-b border-white/10 pb-10">
                    <h2 className="text-4xl font-headline font-bold uppercase tracking-tighter text-secondary mb-4">Location Proximity</h2>
-                   <p className="text-white/40 text-[10px] font-label uppercase tracking-widest font-bold">Discover how close you are to everything that matters.</p>
+                   <p className="text-white/60 text-xs font-label uppercase tracking-widest font-bold">Discover how close you are to everything that matters.</p>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
                    {(data.proximity || []).map((cat: any, i: number) => (
                       <div key={i} className="space-y-6">
-                         <h4 className="text-secondary font-label text-[10px] uppercase tracking-widest font-bold border-l-2 border-secondary pl-4">{cat.cat}</h4>
+                         <h4 className="text-secondary font-label text-xs uppercase tracking-widest font-bold border-l-2 border-secondary pl-4">{cat.cat}</h4>
                          <ul className="space-y-4">
                             {cat.items.map((item: any, j: number) => (
                                <li key={j} className="flex justify-between items-end group">
@@ -151,12 +151,12 @@ export default function ContactUsPage() {
                 <div className="pt-20 border-t border-white/10 space-y-12">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-12 border-b border-white/5">
                        <div>
-                         <p className="font-label text-secondary text-[10px] uppercase tracking-widest mb-2 font-black">Direct Line</p>
+                         <p className="font-label text-secondary text-xs uppercase tracking-widest mb-2 font-black">Direct Line</p>
                          <p className="text-3xl font-headline font-bold text-white">{data.details.phone}</p>
                        </div>
                        <div className="flex flex-col justify-between h-full">
                          <div>
-                            <p className="font-label text-secondary text-[10px] uppercase tracking-widest mb-2 font-black">Email</p>
+                            <p className="font-label text-secondary text-xs uppercase tracking-widest mb-2 font-black">Email</p>
                             <p className="text-xl font-body font-light text-white/80">{data.details.email}</p>
                          </div>
                          <div className="mt-6 flex gap-3">
@@ -180,7 +180,7 @@ export default function ContactUsPage() {
                        </div>
                     </div>
                    <div>
-                      <p className="font-label text-secondary text-[10px] uppercase tracking-widest mb-4 font-black">Strategic Address</p>
+                      <p className="font-label text-secondary text-xs uppercase tracking-widest mb-4 font-black">Strategic Address</p>
                       <p className="text-2xl font-headline leading-tight font-bold text-white whitespace-pre-line">{data.details.address}</p>
                    </div>
                 </div>
@@ -193,7 +193,7 @@ export default function ContactUsPage() {
       <section className="py-32 bg-surface">
          <div className="max-w-7xl mx-auto px-6 md:px-12">
            <FadeIn className="mb-20 text-center lg:text-left">
-              <span className="text-secondary font-label text-[10px] uppercase tracking-[0.3rem] font-bold mb-4 block">Strategic Connectivity</span>
+              <span className="text-secondary font-label text-xs uppercase tracking-[0.3rem] font-bold mb-4 block">Strategic Connectivity</span>
               <h2 className="text-primary text-5xl md:text-7xl font-headline font-bold uppercase tracking-tighter">Map & Proximity</h2>
            </FadeIn>
            
@@ -202,7 +202,7 @@ export default function ContactUsPage() {
                  <img src={data.map.image} alt="Strategic Location Map" className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" />
                  <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-700"></div>
                  <div className="absolute bottom-8 left-8 bg-primary/90 backdrop-blur-md p-6 border border-secondary/20 max-w-xs">
-                    <p className="text-secondary font-label text-[10px] uppercase tracking-widest font-black mb-2">High Fidelity Preview</p>
+                    <p className="text-secondary font-label text-xs uppercase tracking-widest font-black mb-2">High Fidelity Preview</p>
                     <p className="text-white text-sm font-body">A detailed overview of the surrounding infrastructure and upcoming developments.</p>
                  </div>
               </FadeIn>

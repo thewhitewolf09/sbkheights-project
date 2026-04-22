@@ -98,12 +98,12 @@ export default async function Home() {
         <div className="relative z-20 px-6 md:px-12 pt-24 md:pt-32 max-w-7xl mx-auto w-full">
           <div className="max-w-4xl">
             <FadeIn delay={0.2}>
-              <span className="block text-secondary uppercase tracking-[0.4rem] font-label font-black mb-6 text-xs">
+              <span className="block text-secondary uppercase tracking-[0.4rem] font-label font-black mb-6 text-sm">
                 {home.hero.badge}
               </span>
             </FadeIn>
             <FadeIn delay={0.4} distance={40}>
-              <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-headline font-bold leading-[0.9] mb-8 tracking-tighter whitespace-pre-line uppercase italic">
+              <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-headline font-bold leading-[0.9] mb-8 tracking-tighter whitespace-pre-line uppercase">
                 {home.hero.title}
               </h1>
             </FadeIn>
@@ -178,13 +178,13 @@ export default async function Home() {
       <section className="py-32 bg-primary text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
           <FadeIn className="mb-20">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-[10px] mb-4 block font-bold">
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">
               {excellenceTitle}
             </span>
-            <h2 className="text-4xl md:text-6xl font-headline font-bold mb-6 uppercase tracking-tighter italic">
+            <h2 className="text-4xl md:text-6xl font-headline font-bold mb-6 uppercase tracking-tighter">
               {excellenceTitle}
             </h2>
-            <p className="text-white/40 text-xs font-label uppercase tracking-widest border-t border-white/10 pt-4 inline-block">
+            <p className="text-white/60 text-sm font-label uppercase tracking-widest border-t border-white/10 pt-4 inline-block">
               {excellenceSubtitle}
             </p>
           </FadeIn>
@@ -198,7 +198,7 @@ export default async function Home() {
                   <h3 className="text-xl font-headline font-bold mb-4 group-hover:text-primary uppercase tracking-tighter italic">
                     {feature.title}
                   </h3>
-                  <p className="text-white/40 group-hover:text-primary/70 font-body text-sm leading-relaxed transition-colors">
+                  <p className="text-white/60 group-hover:text-primary/70 font-body text-sm leading-relaxed transition-colors">
                     {feature.desc}
                   </p>
                 </div>
@@ -223,7 +223,7 @@ export default async function Home() {
                   <p className="text-primary text-5xl font-headline font-bold mb-2 group-hover:text-secondary transition-colors">
                     {stat.val}
                   </p>
-                  <p className="text-[10px] uppercase tracking-[0.4rem] font-black text-on-surface-variant/40">
+                  <p className="text-xs uppercase tracking-[0.4rem] font-black text-on-surface-variant/60">
                     {stat.label}
                   </p>
                 </div>

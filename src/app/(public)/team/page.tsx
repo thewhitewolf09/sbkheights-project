@@ -21,7 +21,7 @@ export default function OurTeamPage() {
               <span className="block text-3xl font-bold text-primary mb-2">
                 30+
               </span>
-              <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant">
+              <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant">
                 Years of Heritage
               </span>
             </div>
@@ -29,7 +29,7 @@ export default function OurTeamPage() {
               <span className="block text-3xl font-bold text-primary mb-2">
                 150+
               </span>
-              <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant">
+              <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant">
                 Global Awards
               </span>
             </div>
@@ -53,7 +53,7 @@ export default function OurTeamPage() {
       <section className="py-32 px-12 md:px-24">
         <FadeIn className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div className="max-w-2xl">
-            <span className="font-label text-secondary uppercase tracking-[0.2em] text-xs mb-4 block">
+            <span className="font-label text-secondary uppercase tracking-[0.2em] text-sm mb-4 block">
               The Visionaries
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-primary tracking-tight">
@@ -61,7 +61,7 @@ export default function OurTeamPage() {
             </h2>
           </div>
           <div className="flex gap-4">
-            <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant self-center">
+            <span className="font-label text-sm uppercase tracking-widest text-on-surface-variant self-center">
               Filter by Expertise
             </span>
             <div className="w-12 h-[1px] bg-outline-variant self-center"></div>
@@ -78,7 +78,7 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-xs mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
               Founding Partner
             </span>
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
@@ -115,7 +115,7 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-xs mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
               Chief Architect
             </span>
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
@@ -152,7 +152,7 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-xs mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
               Head of Operations
             </span>
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
@@ -189,7 +189,7 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-xs mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
               Design Director
             </span>
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">
@@ -226,7 +226,7 @@ export default function OurTeamPage() {
               />
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
-            <span className="font-label text-secondary uppercase tracking-[0.1em] text-xs mb-2 block">
+            <span className="font-label text-secondary uppercase tracking-[0.1em] text-sm mb-2 block">
               Director of Acquisitions
             </span>
             <h3 className="text-2xl font-bold text-primary mb-4 tracking-tight">

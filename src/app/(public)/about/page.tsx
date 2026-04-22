@@ -106,9 +106,9 @@ export default async function AboutUsPage() {
       <section className="py-24 bg-white px-12">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-12">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-[10px] mb-4 block font-bold">Our Foundation</span>
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">Our Foundation</span>
             <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">Core Values</h2>
-            <p className="text-on-surface-variant/40 text-[10px] uppercase tracking-widest font-black mt-4 border-t border-outline-variant/10 pt-4 inline-block">THE STRUCTURAL PILLARS OF SBK HEIGHTS</p>
+            <p className="text-on-surface-variant/60 text-xs uppercase tracking-widest font-black mt-4 border-t border-outline-variant/10 pt-4 inline-block">THE STRUCTURAL PILLARS OF SBK HEIGHTS</p>
           </FadeIn>
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20">
@@ -140,7 +140,7 @@ export default async function AboutUsPage() {
               
               <div className="space-y-12">
                 <div>
-                  <h3 className="text-secondary font-label text-[10px] uppercase tracking-widest font-black mb-6">Completed Landmarks</h3>
+                  <h3 className="text-secondary font-label text-xs uppercase tracking-widest font-black mb-6">Completed Landmarks</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {(data.portfolio?.completed && data.portfolio.completed.length > 0 ? data.portfolio.completed : [
                       { n: "Chambal River Front", loc: "Kota, Rajasthan", val: "₹7 Cr" },
@@ -150,14 +150,14 @@ export default async function AboutUsPage() {
                     ]).map((p: any, i: number) => (
                       <div key={i} className="p-4 border border-outline-variant/10 hover:border-secondary transition-colors group">
                         <p className="text-primary font-headline font-bold text-sm uppercase tracking-tight group-hover:text-secondary">{p.n}</p>
-                        <p className="text-[10px] text-on-surface-variant/60 uppercase font-label tracking-widest mt-1">{p.loc} • {p.val}</p>
+                        <p className="text-xs text-on-surface-variant/60 uppercase font-label tracking-widest mt-1">{p.loc} • {p.val}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-secondary font-label text-[10px] uppercase tracking-widest font-black mb-6">Ongoing Developments</h3>
+                  <h3 className="text-secondary font-label text-xs uppercase tracking-widest font-black mb-6">Ongoing Developments</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {(data.portfolio?.ongoing && data.portfolio.ongoing.length > 0 ? data.portfolio.ongoing : [
                       { n: "Solid Pink Stone Gate", loc: "District Gonda", val: "₹35 Cr" },
@@ -166,7 +166,7 @@ export default async function AboutUsPage() {
                     ]).map((p: any, i: number) => (
                       <div key={i} className="p-4 border border-outline-variant/10 hover:border-secondary transition-colors group bg-primary/5">
                         <p className="text-primary font-headline font-bold text-sm uppercase tracking-tight group-hover:text-secondary">{p.n}</p>
-                        <p className="text-[10px] text-on-surface-variant/60 uppercase font-label tracking-widest mt-1">{p.loc} • {p.val}</p>
+                        <p className="text-xs text-on-surface-variant/60 uppercase font-label tracking-widest mt-1">{p.loc} • {p.val}</p>
                       </div>
                     ))}
                   </div>
@@ -180,7 +180,7 @@ export default async function AboutUsPage() {
       <section className="py-24 px-12 bg-surface border-t border-outline-variant/10">
         <div className="max-w-7xl mx-auto">
           <FadeIn className="mb-16">
-            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-[10px] mb-4 block font-bold">Our Leadership</span>
+            <span className="text-secondary font-label uppercase tracking-[0.3rem] text-xs mb-4 block font-bold">Our Leadership</span>
             <h2 className="text-primary text-5xl md:text-7xl font-headline uppercase tracking-tighter leading-[0.9] font-bold">The Visionaries.</h2>
           </FadeIn>
 
@@ -191,7 +191,7 @@ export default async function AboutUsPage() {
             ]).map((v: any, i: number) => (
               <FadeIn key={i} delay={0.2 * (i + 1)} className="group">
                 <div className={`${i === 1 ? 'bg-primary border-white/5' : 'bg-primary/5 border-outline-variant/10'} p-12 border group-hover:border-secondary transition-all h-full`}>
-                  <span className="text-secondary font-label uppercase tracking-widest text-[10px] font-black mb-6 block">{v.type}</span>
+                  <span className="text-secondary font-label uppercase tracking-widest text-xs font-black mb-6 block">{v.type}</span>
                   <h3 className={`text-4xl md:text-5xl font-headline mb-2 uppercase tracking-tighter ${i === 1 ? 'text-white' : 'text-primary'}`}>{v.name}</h3>
                   <p className={`font-body text-sm uppercase tracking-[0.2rem] mb-8 ${i === 1 ? 'text-white/40' : 'text-primary/60'}`}>{v.role}</p>
                   <p className={`leading-relaxed font-light ${i === 1 ? 'text-white/60' : 'text-on-surface-variant'}`}>

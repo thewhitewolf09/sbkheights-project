@@ -23,8 +23,8 @@ export default async function Footer() {
             in the heart of Sector 45.
           </p>
           <div className="mt-8 space-y-2">
-            <p className="text-secondary/60 text-[10px] font-bold uppercase tracking-widest">Main Office</p>
-            <p className="text-white/60 text-xs font-body whitespace-pre-line leading-relaxed">
+            <p className="text-secondary/60 text-xs font-bold uppercase tracking-widest">Main Office</p>
+            <p className="text-white/60 text-sm font-body whitespace-pre-line leading-relaxed">
               Khasra No. 68, Behind Canara Bank,{"\n"}
               Sector 45, Noida – 201301
             </p>
@@ -33,7 +33,7 @@ export default async function Footer() {
         
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2 w-fit">Explore</h4>
+            <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2 w-fit">Explore</h4>
             <ul className="space-y-4 font-body text-sm tracking-wide">
               <li><Link className="text-white/40 hover:text-secondary transition-colors" href="/project">Floor Plans</Link></li>
               <li><Link className="text-white/40 hover:text-secondary transition-colors" href="/gallery">Gallery</Link></li>
@@ -42,7 +42,7 @@ export default async function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2 w-fit">Legal</h4>
+            <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2 w-fit">Legal</h4>
             <ul className="space-y-4 font-body text-sm tracking-wide">
               <li><Link className="text-white/40 hover:text-secondary transition-colors" href="/privacy">Privacy Policy</Link></li>
               <li><Link className="text-white/40 hover:text-secondary transition-colors" href="/privacy#terms">Terms of Service</Link></li>
@@ -51,9 +51,9 @@ export default async function Footer() {
         </div>
 
         <div className="flex flex-col md:items-end">
-          <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Get In Touch</h4>
-          <div className="space-y-4 text-right">
-            <p className="text-secondary font-headline text-2xl tracking-tight">{data.details.phone}</p>
+          <h4 className="text-white text-sm font-bold uppercase tracking-widest mb-6 border-b border-white/10 pb-2">Get In Touch</h4>
+          <div className="space-y-4 text-left md:text-right">
+            <p className="text-secondary font-label text-2xl font-bold tracking-tight">{data.details.phone}</p>
             <p className="text-white/40 font-body text-sm lowercase tracking-wider">{data.details.email}</p>
           </div>
           
